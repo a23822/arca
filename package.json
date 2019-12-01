@@ -26,6 +26,7 @@
     "vinyl-buffer": "^1.0.1"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "minimatch": "^3.0.4"
   }
 }
