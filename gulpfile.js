@@ -6,8 +6,23 @@ var imagemin = require('gulp-imagemin');
 var buffer = require('vinyl-buffer');
 var browserSync = require('browser-sync');
 
+// Load the full build.
+var _ = require('lodash');
+// Load the core build.
+var _ = require('lodash/core');
+// Load the FP build for immutable auto-curried iteratee-first data-last methods.
+var fp = require('lodash/fp');
+ 
+// Load method categories.
+var array = require('lodash/array');
+var object = require('lodash/fp/object');
+ 
+// Cherry-pick methods for smaller browserify/rollup/webpack bundles.
+var at = require('lodash/at');
+var curryN = require('lodash/fp/curryN');
+
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src('scss/**/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['chrome > 0', 'ie > 0', 'firefox > 0']
@@ -48,7 +63,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch', ['browser-sync'], function() {
-    gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('scss/**/*.scss', ['sass']);
     gulp.watch('*.html').on('change', browserSync.reload);
 });
 

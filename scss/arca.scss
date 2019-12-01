@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+@import './common/mixins';
+@import './common/variables';
+@import './common/reset.scss';
+
+.arca {
+    position: relative;
+
+    .arca_tit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+@import './import/import_header';
+@import './import/import_nav';
+@import './import/import_main';
+@import './import/import_footer';
+
+
+

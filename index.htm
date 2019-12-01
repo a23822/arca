@@ -4,10 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>아르카디아 클랜</title>
+    <link rel="stylesheet" href="./css/arca.css"/>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Noto+Sans+KR|Noto+Serif+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>asd</h1>
-    <p>asd</p>
+    <div class="arca">
+        <h1 class="arca_tit">아르카디아 클랜 앱에 오신 걸 환영합니다</h1>
+        <header class="header_wrap">
+            <div class="profile_area">
+                <a href="#" role="button" class="thumb_wrap">
+                    <img src="https://picsum.photos/60/60" class="thumb" alt=""/>
+                </a>
+                <p class="name">
+                    UserName
+                </p>
+            </div>
+            <div class="main_tap_list" role="tablist" aria-orientation="horizontal">
+                <a href="#" class="tap_item" role="tab" aria-selected="true">
+                    연합
+                </a>
+                <a href="#" class="tap_item" role="tab" aria-selected="false">
+                    킹오브잡초맨
+                </a>
+                <a href="#" class="tap_item" role="tab" aria-selected="false">
+                    게임정보
+                </a>
+            </div>
+        </header>
+        <nav class="nav_wrap">
+
+        </nav>
+        <main class="main_wrap">
+            
+        </main>
+        <footer class="footer_wrap">
+
+        </footer>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+    <script src="./js/active.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDe0Z09HqXB6qdpSPlv3Q03trD5r1F0qI0",
+        authDomain: "arca-aeb1a.firebaseapp.com",
+        databaseURL: "https://arca-aeb1a.firebaseio.com",
+        projectId: "arca-aeb1a",
+        storageBucket: "arca-aeb1a.appspot.com",
+        messagingSenderId: "581342567551",
+        appId: "1:581342567551:web:035dbb95532d43c13bb34a",
+        measurementId: "G-LHEQGWGMTN"
+    };
+    var functions = firebase.app().functions('us-central1');
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 </body>
 </html>

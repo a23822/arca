@@ -1,0 +1,39 @@
+@mixin clear {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@mixin font($size, $line-height, $font-weight: 400, $color: #666, $font-fam: $font-family ) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    color: $color;
+    font-family: $font-fam;
+}
+
+@mixin mask($length: 0) {
+    position: absolute;
+    top: $length;
+    left: $length;
+    right: $length;
+    bottom: $length;
+}
+
+@mixin galfol {
+    @media (max-width: 319px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
