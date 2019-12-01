@@ -54,8 +54,9 @@ table {
   border-spacing: 0; }
 
 .arca {
-  position: relative; }
-  .arca .arca_tit {
+  position: relative;
+  background-color: #c9eec8; }
+  .arca .blind_tit {
     position: absolute;
     top: 0;
     left: 0;
@@ -123,3 +124,55 @@ table {
       @media (max-width: 319px) {
         .arca .header_wrap .main_tap_list .tap_item {
           font-size: 1.4rem; } }
+
+.main_wrap .alliance_name {
+  font-size: 2rem;
+  line-height: 4.8rem;
+  font-weight: 500;
+  color: #5c8d89;
+  font-family: "jua", sans-serif;
+  text-align: center; }
+
+.main_wrap .info_wrap {
+  padding: 0 10px 10px; }
+  .main_wrap .info_wrap .info_flick {
+    margin: 0 -10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    font-size: 0; }
+  .main_wrap .info_wrap .info {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    font-weight: 400;
+    color: #5c8d89;
+    font-family: "jua", sans-serif;
+    -webkit-border-radius: 16px;
+       -moz-border-radius: 16px;
+            border-radius: 16px;
+    background-color: #f4f9f4;
+    -ms-overflow-style: none; }
+    .main_wrap .info_wrap .info ::-webkit-scrollbar {
+      display: none; }
+    .main_wrap .info_wrap .info + .info {
+      margin-left: 10px; }
+    .main_wrap .info_wrap .info:first-child {
+      margin-left: 10px; }
+    .main_wrap .info_wrap .info:last-child {
+      margin-right: 10px; }
+    .main_wrap .info_wrap .info .info_label {
+      float: left;
+      padding: 0 10px;
+      color: #f4f9f4;
+      background-color: #5c8d89;
+      -webkit-border-radius: 16px;
+         -moz-border-radius: 16px;
+              border-radius: 16px; }
+    .main_wrap .info_wrap .info .val {
+      margin-left: 5px;
+      padding-right: 10px; }
+    .main_wrap .info_wrap .info:after {
+      content: '';
+      display: block;
+      clear: both; }
