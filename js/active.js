@@ -33,3 +33,13 @@ for (var i=0; i<header_main_tap.length; i++) {
         }
     });
 }
+
+let alliance_info = alliance_wrap.getElementsByClassName('info');
+
+for (var i=0; i<alliance_info.length; i++) {
+    alliance_info[i].addEventListener('click', function(){
+        var flag = this.classList.contains('info_hidden');
+        this.classList.toggle('info_hidden');
+        this.classList.toggle('info_opened');
+    });
+}

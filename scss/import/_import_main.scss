@@ -2,9 +2,20 @@
 
 .main_wrap {
     .alliance_name {
-        @include font(2rem, 4.8rem, 500, $main_color);
+        @include font(2rem, 4.8rem, 500, $header_color);
         text-align: center;
     }
+
+    .content_bx {
+        position: relative;
+        margin-top: 3px;
+        background-color: #fff;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
     .info_wrap {
         padding: 0 10px 10px;
 
@@ -13,6 +24,12 @@
             white-space: nowrap;
             overflow-x: auto;
             font-size: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+            }
         }
 
         .info {
@@ -20,11 +37,10 @@
             vertical-align: top;
             @include font(1.2rem, 3rem, 400, $main-color);
             border-radius: 16px;
-            background-color: $font-color;
-            -ms-overflow-style: none;
-            ::-webkit-scrollbar {
-                display: none;
-            }
+            background-color: #d8f7dd;
+            animation: fadein 1s linear;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
 
             & + .info {
                 margin-left: 10px;
@@ -51,9 +67,70 @@
                 padding-right: 10px;
             }
 
+            &.info_hidden {
+                .val {
+                    animation: info_fadeout 1.2s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: both;
+                }
+            }
+
+            &.info_opened {
+                .val {
+                    animation: info_fadein 1.2s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: both;
+                }
+            }
+
             &:after {
                 @include clear;
             }
         }
+    }
+
+    .apply_wrap {
+        background-color: $font-color;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes info_fadeout {
+    0% {
+        margin-left: 5px;
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        margin-left: -30px;
+        opacity: 0;
+    }
+}
+
+@keyframes info_fadein {
+    0% {
+        margin-left: -30px;
+        color: transparent;
+        opacity: 0;
+    }
+    50% {
+        color: transparent;
+        opacity: 1;
+    }
+    100% {
+        margin-left: 5px;
+        color: $main-color;
+        opacity: 1;
     }
 }
