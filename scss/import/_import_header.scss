@@ -51,7 +51,7 @@
                 @include font(1.8rem, 5rem, 200, $border-color);
 
                 &[aria-selected=true] {
-                    background-color: $border-color;
+                    background-color: #fff;
                     color: $main-color;
                     border: 1px solid $main-color;
                     box-sizing: border-box;

@@ -31,7 +31,6 @@ for (var i=0; i<header_main_tap.length; i++) {
             kow_wrap.style.display = 'none';
             tip_wrap.style.display = 'block';
         }
-<<<<<<< HEAD
     });
 }
 
@@ -42,7 +41,5 @@ for (var i=0; i<alliance_info.length; i++) {
         var flag = this.classList.contains('info_hidden');
         this.classList.toggle('info_hidden');
         this.classList.toggle('info_opened');
-=======
->>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
     });
 }
