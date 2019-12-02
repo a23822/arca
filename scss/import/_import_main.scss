@@ -2,6 +2,7 @@
 
 .main_wrap {
     .alliance_name {
+<<<<<<< HEAD
         @include font(2rem, 4.8rem, 500, $header_color);
         text-align: center;
     }
@@ -16,6 +17,11 @@
         }
     }
 
+=======
+        @include font(2rem, 4.8rem, 500, $main_color);
+        text-align: center;
+    }
+>>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
     .info_wrap {
         padding: 0 10px 10px;
 
@@ -24,12 +30,15 @@
             white-space: nowrap;
             overflow-x: auto;
             font-size: 0;
+<<<<<<< HEAD
             scrollbar-width: none;
             -ms-overflow-style: none;
 
             &::-webkit-scrollbar {
                 width: 0px;
             }
+=======
+>>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
         }
 
         .info {
@@ -37,10 +46,18 @@
             vertical-align: top;
             @include font(1.2rem, 3rem, 400, $main-color);
             border-radius: 16px;
+<<<<<<< HEAD
             background-color: #d8f7dd;
             animation: fadein 1s linear;
             animation-iteration-count: 1;
             animation-fill-mode: both;
+=======
+            background-color: $font-color;
+            -ms-overflow-style: none;
+            ::-webkit-scrollbar {
+                display: none;
+            }
+>>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
 
             & + .info {
                 margin-left: 10px;
@@ -67,6 +84,7 @@
                 padding-right: 10px;
             }
 
+<<<<<<< HEAD
             &.info_hidden {
                 .val {
                     animation: info_fadeout 1.2s;
@@ -83,11 +101,14 @@
                 }
             }
 
+=======
+>>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
             &:after {
                 @include clear;
             }
         }
     }
+<<<<<<< HEAD
 
     .apply_wrap {
         background-color: $font-color;
@@ -133,4 +154,6 @@
         color: $main-color;
         opacity: 1;
     }
+=======
+>>>>>>> 9c846dc064f9b14dcdad30e41c61b1b378562b87
 }
