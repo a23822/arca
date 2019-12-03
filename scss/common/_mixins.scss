@@ -4,12 +4,15 @@
     clear: both;
 }
 
-@mixin font($size, $line-height, $font-weight: 400, $color: #666, $font-fam: $font-family ) {
+@mixin font($size, $line-height, $font-weight: 400, $color: #666) {
     font-size: $size;
     line-height: $line-height;
     font-weight: $font-weight;
     color: $color;
-    font-family: $font-fam;
+}
+
+@mixin font-fam($family) {
+    font-family: $family, 'NotoSansKR', sans-serif;
 }
 
 @mixin mask($length: 0) {
