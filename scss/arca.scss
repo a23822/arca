@@ -16,6 +16,61 @@
         white-space: nowrap;
         overflow: hidden;
     }
+
+    .nav_btn {
+        position: fixed;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+        padding: 0 4px 0 13px;
+        width: 30px;
+        height: 50px;
+        border: 0;
+        border-radius: 8px;
+        background-color: #f1f1f1;
+        box-shadow: 0 0 3px 1px #d3d3d3;
+        z-index: 10;
+        transition: color 0.5s;
+
+        .btn_txt {
+            width: 2px;
+            @include font(1rem, 12px, 400, #f1f1f1);
+            font-size: 1rem;
+            line-height: 1.2rem;
+            word-wrap: break-word;
+            text-align: center;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            background-color: #609c7f;
+            border-radius: 8px;
+            transition: all 0.7s;
+        }
+
+        &:hover {
+            color: #fff;
+            .btn_txt {
+                position: relative;
+                z-index: 90;
+            }
+            &:before {
+                width: 100%;
+            }
+            &:after {
+                content: '';
+                @include mask;
+                z-index: 20;
+                border: 1px solid rgba(#000, 0.1);
+                border-radius: 7px;
+            }
+        }
+    }
 }
 
 @import './import/import_header';
