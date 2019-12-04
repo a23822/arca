@@ -32,13 +32,11 @@ if (pc_media) {
     // m  해상도 < 1024px
     // nav_btn
     // 터치 시작 시 이벤트
-
     nav_btn.addEventListener('click', function(){
         var nav_btn_state_is_opened = nav_wrap.classList.contains('is_opened');
         console.log(nav_btn_state_is_opened);
         if (nav_btn_state_is_opened) {
             nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
-            
         } else {
             nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
         }
@@ -46,7 +44,7 @@ if (pc_media) {
 }
 
 
-function nav_btn_txt_change(btn) {
+function nav_btn_txt_change(btn_txt) {
     var flag = nav_wrap.classList.contains('is_opened');
     if (flag) {
         this.innerHTML = 'CLOSE';
@@ -54,30 +52,55 @@ function nav_btn_txt_change(btn) {
         this.innerHTML = 'OPEN';
     }
 }
-function nav_btn_txt_change_mobile(btn, flag, callback) {
-    nav_btn_txt_change(btn);
+function nav_btn_txt_change_mobile(btn_txt, flag, callback) {
+    var flag = nav_wrap.classList.contains('is_opened');
+    if (flag) {
+        btn_txt.innerHTML = 'CLOSE';
+    } else {
+        btn_txt.innerHTML = 'OPEN';
+    }
     callback(flag);
 }
 
 function nav_btn_mobile_control(flag) {
     if (flag) {
+        console.log('1')
         nav_btn.classList.add('is_expanded');
         nav_btn.addEventListener('click', function(){
-            nav_wrap.classList.remove('is_opened');
-            flag = false;
+            nav_btn_mobile_finale(flag);
+            contract_btn();
+            console.log('11')
         });
     } else {
+        console.log('2')
         nav_btn.classList.add('is_expanded');
         nav_btn.addEventListener('click', function(){
-            nav_wrap.classList.add('is_opened');
-            flag = true;
+            nav_btn_mobile_finale(flag);
+            contract_btn();
+            console.log('22')
         });
     }
 }
 
-function nav_btn_mobile_finale() {
-    nav_btn.classList.remove('is_expanded');
+function nav_btn_mobile_finale(flag) {
+    if (flag) {
+        nav_wrap.classList.remove('is_opened');
+        flag = false;
+    } else {
+        nav_wrap.classList.add('is_opened');
+        flag = true;
+    };
+};
+
+function contract_btn() {
+    setTimeout(function(){
+        nav_btn.classList.remove('is_expanded');
+    }, 800);
 }
+
+
+
+
 
 // let header_main_tap = header_main_tap_list.getElementsByClassName('tap_item');
 // let alliance_wrap = document.getElementById('alliance_wrap');
