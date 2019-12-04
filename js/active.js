@@ -1,33 +1,83 @@
 let nav_wrap = document.getElementsByClassName('nav_wrap')[0];
 let nav_btn = document.getElementById('nav_btn');
-var nav_btn_txt = nav_btn.getElementsByClassName('btn_txt')[0];
+let nav_btn_txt = nav_btn.getElementsByClassName('btn_txt')[0];
+let nav_bg = nav_wrap.getElementsByClassName('bg')[0];
 
-// nav_btn
-// - 버튼 호버 시 이벤트
-nav_btn.addEventListener('mouseover', function(){
+// 해상도 분기
+var pc_media = matchMedia("screen and (min-width: 1024px)").matches;
+
+if (pc_media) {
+    // pc 해상도 >= 1024px
+    // nav_btn
+    // - 버튼 호버 시 이벤트
+    nav_btn.addEventListener('mouseover', function(){
+        nav_btn_txt_change(nav_btn_txt);
+
+        this.classList.add('is_expanded');
+    });
+    // - 호버 끝날 시 이벤트
+    nav_btn.addEventListener('mouseout', function(){
+        this.classList.remove('is_expanded');
+    });
+    // - 클릭 시 이벤트
+    nav_btn.addEventListener('click', function(){
+        var flag = nav_wrap.classList.contains('is_opened');
+        if (flag) {
+            nav_wrap.classList.remove('is_opened');
+        } else {
+            nav_wrap.classList.add('is_opened');
+        }
+    });
+} else {
+    // m  해상도 < 1024px
+    // nav_btn
+    // 터치 시작 시 이벤트
+
+    nav_btn.addEventListener('click', function(){
+        var nav_btn_state_is_opened = nav_wrap.classList.contains('is_opened');
+        console.log(nav_btn_state_is_opened);
+        if (nav_btn_state_is_opened) {
+            nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
+            
+        } else {
+            nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
+        }
+    });
+}
+
+
+function nav_btn_txt_change(btn) {
     var flag = nav_wrap.classList.contains('is_opened');
     if (flag) {
-        nav_btn_txt.innerHTML = 'CLOSE';
+        this.innerHTML = 'CLOSE';
     } else {
-        nav_btn_txt.innerHTML = 'OPEN';
+        this.innerHTML = 'OPEN';
     }
-    this.classList.add('is_expanded');
-});
+}
+function nav_btn_txt_change_mobile(btn, flag, callback) {
+    nav_btn_txt_change(btn);
+    callback(flag);
+}
 
-// - 호버 끝날 시 이벤트
-nav_btn.addEventListener('mouseout', function(){
-    this.classList.remove('is_expanded');
-});
-
-// - 클릭 시 이벤트
-nav_btn.addEventListener('click', function(){
-    var flag = nav_wrap.classList.contains('is_opened');
+function nav_btn_mobile_control(flag) {
     if (flag) {
-        nav_wrap.classList.remove('is_opened');
+        nav_btn.classList.add('is_expanded');
+        nav_btn.addEventListener('click', function(){
+            nav_wrap.classList.remove('is_opened');
+            flag = false;
+        });
     } else {
-        nav_wrap.classList.add('is_opened');
+        nav_btn.classList.add('is_expanded');
+        nav_btn.addEventListener('click', function(){
+            nav_wrap.classList.add('is_opened');
+            flag = true;
+        });
     }
-});
+}
+
+function nav_btn_mobile_finale() {
+    nav_btn.classList.remove('is_expanded');
+}
 
 // let header_main_tap = header_main_tap_list.getElementsByClassName('tap_item');
 // let alliance_wrap = document.getElementById('alliance_wrap');
