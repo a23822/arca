@@ -5,13 +5,14 @@ let nav_bg = nav_wrap.getElementsByClassName('bg')[0];
 
 // 해상도 분기
 var pc_media = matchMedia("screen and (min-width: 1024px)").matches;
+var check_nav_wrap_is_opened = false;
 
 if (pc_media) {
     // pc 해상도 >= 1024px
     // nav_btn
     // - 버튼 호버 시 이벤트
     nav_btn.addEventListener('mouseover', function(){
-        nav_btn_txt_change(nav_btn_txt);
+        nav_btn_txt_change(check_nav_wrap_is_opened);
 
         this.classList.add('is_expanded');
     });
@@ -24,82 +25,58 @@ if (pc_media) {
         var flag = nav_wrap.classList.contains('is_opened');
         if (flag) {
             nav_wrap.classList.remove('is_opened');
+            check_nav_wrap_is_opened = false;
         } else {
             nav_wrap.classList.add('is_opened');
+            check_nav_wrap_is_opened = true;
         }
     });
 } else {
     // m  해상도 < 1024px
     // nav_btn
-    // 터치 시작 시 이벤트
+    var nav_btn_checked_second_click = false;
+    
+    // - 클릭 시 이벤트
     nav_btn.addEventListener('click', function(){
-        var nav_btn_state_is_opened = nav_wrap.classList.contains('is_opened');
-        console.log(nav_btn_state_is_opened);
-        if (nav_btn_state_is_opened) {
-            nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
+        if (nav_btn_checked_second_click) {
+            check_nav_wrap_is_opened = nav_btn_second_click(check_nav_wrap_is_opened);
+            nav_btn_checked_second_click = false;
         } else {
-            nav_btn_txt_change_mobile(nav_btn_txt, nav_btn_state_is_opened, nav_btn_mobile_control);
+            nav_btn_txt_change(check_nav_wrap_is_opened);
+            nav_btn.classList.add('is_expanded');
+            nav_btn_checked_second_click = true;
         }
     });
 }
 
-
-function nav_btn_txt_change(btn_txt) {
-    var flag = nav_wrap.classList.contains('is_opened');
+function nav_btn_txt_change(flag) {
     if (flag) {
-        this.innerHTML = 'CLOSE';
+        nav_btn_txt.innerHTML = 'CLOSE';
     } else {
-        this.innerHTML = 'OPEN';
-    }
-}
-function nav_btn_txt_change_mobile(btn_txt, flag, callback) {
-    var flag = nav_wrap.classList.contains('is_opened');
-    if (flag) {
-        btn_txt.innerHTML = 'CLOSE';
-    } else {
-        btn_txt.innerHTML = 'OPEN';
-    }
-    callback(flag);
-}
-
-function nav_btn_mobile_control(flag) {
-    if (flag) {
-        console.log('1')
-        nav_btn.classList.add('is_expanded');
-        nav_btn.addEventListener('click', function(){
-            nav_btn_mobile_finale(flag);
-            contract_btn();
-            console.log('11')
-        });
-    } else {
-        console.log('2')
-        nav_btn.classList.add('is_expanded');
-        nav_btn.addEventListener('click', function(){
-            nav_btn_mobile_finale(flag);
-            contract_btn();
-            console.log('22')
-        });
+        nav_btn_txt.innerHTML = 'OPEN';
     }
 }
 
-function nav_btn_mobile_finale(flag) {
+function nav_btn_second_click(flag) {
     if (flag) {
         nav_wrap.classList.remove('is_opened');
-        flag = false;
+        setTimeout(function() {
+            nav_btn.classList.remove('is_expanded');
+            nav_btn_txt.innerHTML = 'OPEN';
+        }, 800);
+
+        return flag = false;
     } else {
         nav_wrap.classList.add('is_opened');
-        flag = true;
-    };
-};
+        setTimeout(function() {
+            nav_btn.classList.remove('is_expanded');
+            nav_btn_txt.innerHTML = 'CLOSE';
+        }, 800);
 
-function contract_btn() {
-    setTimeout(function(){
-        nav_btn.classList.remove('is_expanded');
-    }, 800);
+        return flag = true;
+    }
+    
 }
-
-
-
 
 
 // let header_main_tap = header_main_tap_list.getElementsByClassName('tap_item');
