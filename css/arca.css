@@ -30,6 +30,9 @@ i {
   font-style: inherit; }
 
 button {
+  margin: 0;
+  padding: 0;
+  border: 0;
   background-color: transparent; }
 
 /* HTML5 display-role reset for older browsers */
@@ -68,24 +71,19 @@ table {
   top: 0;
   left: -100px;
   bottom: 0;
+  -webkit-border-top-right-radius: 25px;
+     -moz-border-radius-topright: 25px;
+          border-top-right-radius: 25px;
   width: 100px;
   z-index: 100;
+  background-color: #e4eee9;
   -webkit-transition: left 0.5s ease-out;
   -moz-transition: left 0.5s ease-out;
   transition: left 0.5s ease-out; }
-  .arca .nav_wrap .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-border-top-right-radius: 30px;
-       -moz-border-radius-topright: 30px;
-            border-top-right-radius: 30px;
-    background-color: #e4eee9;
-    z-index: 200; }
   .arca .nav_wrap.is_opened {
     left: 0; }
+    .arca .nav_wrap.is_opened + .dimmed_layer {
+      display: block; }
   .arca .nav_wrap .nav_btn {
     position: absolute;
     top: 50%;
@@ -148,6 +146,116 @@ table {
         -webkit-border-radius: 7px;
            -moz-border-radius: 7px;
                 border-radius: 7px; }
+  .arca .nav_wrap .bg {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 5px;
+    bottom: 0;
+    -webkit-border-top-right-radius: 20px;
+       -moz-border-radius-topright: 20px;
+            border-top-right-radius: 20px;
+    background-color: #fff;
+    z-index: 200; }
+  .arca .nav_wrap .profile_area .thumb_wrap {
+    position: relative;
+    float: right;
+    margin: 5px; }
+    .arca .nav_wrap .profile_area .thumb_wrap:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      -webkit-border-radius: 50%;
+         -moz-border-radius: 50%;
+              border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.3); }
+  .arca .nav_wrap .profile_area .thumb {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%; }
+  .arca .nav_wrap .profile_area .profile_info {
+    padding: 5px 0 5px 5px;
+    text-align: center;
+    overflow: hidden;
+    line-height: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .arca .nav_wrap .profile_area:after {
+    content: '';
+    display: block;
+    clear: both; }
+  .arca .nav_wrap .main_tab_list {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .arca .nav_wrap .main_tab_list.is_expanded {
+      width: 95px; }
+      .arca .nav_wrap .main_tab_list.is_expanded .tab_item .tab_txt {
+        display: block; }
+    .arca .nav_wrap .main_tab_list .tab_item {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 33.33%;
+      -webkit-border-radius: 2px;
+         -moz-border-radius: 2px;
+              border-radius: 2px;
+      color: #fff;
+      font-family: 'Jua', sans-serif;
+      font-size: 1.4rem; }
+      .arca .nav_wrap .main_tab_list .tab_item.is_clicked .top_area {
+        bottom: 100%; }
+      .arca .nav_wrap .main_tab_list .tab_item.is_clicked .bottom_area {
+        top: 100%; }
+      .arca .nav_wrap .main_tab_list .tab_item .top_area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        -webkit-transition: bottom 1s ease-in-out;
+        -moz-transition: bottom 1s ease-in-out;
+        transition: bottom 1s ease-in-out; }
+      .arca .nav_wrap .main_tab_list .tab_item .bottom_area {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-transition: top 1s ease-in-out;
+        -moz-transition: top 1s ease-in-out;
+        transition: top 1s ease-in-out; }
+      .arca .nav_wrap .main_tab_list .tab_item .tab_txt {
+        display: none;
+        position: relative; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=arca_tab] span:not(:last-child) {
+        background-color: #cc0004; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=kow_tab] span:not(:last-child) {
+        background-color: #a3cca3; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=mff_tab] span:not(:last-child) {
+        background-color: blue; }
+
+.arca .dimmed_layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  z-index: 99; }
 
 .main_wrap .alliance_name {
   font-size: 2rem;
