@@ -2,7 +2,6 @@ let nav_wrap = document.getElementsByClassName('nav_wrap')[0];
 let nav_btn = document.getElementById('nav_btn');
 let nav_btn_txt = nav_btn.getElementsByClassName('btn_txt')[0];
 let nav_bg = nav_wrap.getElementsByClassName('bg')[0];
-let main_tab_list = document.getElementById('main_tab_list');
 
 // 해상도 분기
 var pc_media = matchMedia("screen and (min-width: 1024px)").matches;
@@ -26,11 +25,9 @@ if (pc_media) {
         var flag = nav_wrap.classList.contains('is_opened');
         if (flag) {
             nav_wrap.classList.remove('is_opened');
-            main_tab_list.classList.remove('is_expanded');
             check_nav_wrap_is_opened = false;
         } else {
             nav_wrap.classList.add('is_opened');
-            main_tab_list.classList.add('is_expanded');
             check_nav_wrap_is_opened = true;
         }
     });
@@ -56,12 +53,20 @@ if (pc_media) {
 let tab_item = main_tab_list.getElementsByTagName('button');
 for (var i=0; i<tab_item.length; i++) {
     tab_item[i].addEventListener('click', function(){
-        var flag = this.classList.contains('is_clicked');
-        if (flag) {
+        var flag_top = this.classList.contains('is_top');
+        var flag_left = this.classList.contains('is_left');
+        var flag_right = this.classList.contains('is_right');
+
+        if (flag_top) {
+            console.log('top')
+        } else if (flag_left) {
+            
+        } else if (flag_right) {
 
         } else {
-            this.classList.add('is_clicked');
+            console.log('먼가 잘못됬다!');
         }
+
     })
 }
 
@@ -77,7 +82,6 @@ function nav_btn_txt_change(flag) {
 function nav_btn_second_click(flag) {
     if (flag) {
         nav_wrap.classList.remove('is_opened');
-        main_tab_list.classList.remove('is_expanded');
         setTimeout(function() {
             nav_btn.classList.remove('is_expanded');
             nav_btn_txt.innerHTML = 'OPEN';
@@ -86,7 +90,6 @@ function nav_btn_second_click(flag) {
         return flag = false;
     } else {
         nav_wrap.classList.add('is_opened');
-        main_tab_list.classList.add('is_expanded');
         setTimeout(function() {
             nav_btn.classList.remove('is_expanded');
             nav_btn_txt.innerHTML = 'CLOSE';

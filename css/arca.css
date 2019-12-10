@@ -68,33 +68,37 @@ table {
 
 .arca .nav_wrap {
   position: fixed;
-  top: 0;
-  left: -100px;
-  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: -100px;
   -webkit-border-top-right-radius: 25px;
      -moz-border-radius-topright: 25px;
           border-top-right-radius: 25px;
-  width: 100px;
+  -webkit-border-top-left-radius: 25px;
+     -moz-border-radius-topleft: 25px;
+          border-top-left-radius: 25px;
+  height: 100px;
   z-index: 100;
   background-color: #e4eee9;
-  -webkit-transition: left 0.5s ease-out;
-  -moz-transition: left 0.5s ease-out;
-  transition: left 0.5s ease-out; }
+  -webkit-transition: bottom 0.5s ease-out;
+  -moz-transition: bottom 0.5s ease-out;
+  transition: bottom 0.5s ease-out; }
   .arca .nav_wrap.is_opened {
-    left: 0; }
+    bottom: 0; }
     .arca .nav_wrap.is_opened + .dimmed_layer {
       display: block; }
+    .arca .nav_wrap.is_opened .nav_btn.is_expanded .btn_txt {
+      margin-top: -2px; }
   .arca .nav_wrap .nav_btn {
     position: absolute;
-    top: 50%;
-    right: -9px;
-    -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    padding: 0 6px 0 15px;
-    width: 30px;
-    height: 80px;
+    left: 50%;
+    top: -9px;
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
     border: 0;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
@@ -103,11 +107,10 @@ table {
     -webkit-box-shadow: 0 0 3px 1px #d3d3d3;
        -moz-box-shadow: 0 0 3px 1px #d3d3d3;
             box-shadow: 0 0 3px 1px #d3d3d3;
-    -webkit-transition: right 0.8s ease-in-out;
-    -moz-transition: right 0.8s ease-in-out;
-    transition: right 0.8s ease-in-out; }
+    -webkit-transition: top 0.8s ease-in-out;
+    -moz-transition: top 0.8s ease-in-out;
+    transition: top 0.8s ease-in-out; }
     .arca .nav_wrap .nav_btn .btn_txt {
-      width: 2px;
       font-size: 1rem;
       line-height: 12px;
       font-weight: 400;
@@ -117,24 +120,27 @@ table {
     .arca .nav_wrap .nav_btn:before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
       bottom: 0;
-      width: 0;
+      left: 0;
+      right: 0;
+      height: 0;
       background-color: #609c7f;
       -webkit-border-radius: 8px;
          -moz-border-radius: 8px;
               border-radius: 8px;
-      -webkit-transition: width 0.7s ease-out;
-      -moz-transition: width 0.7s ease-out;
-      transition: width 0.7s ease-out; }
+      -webkit-transition: all 0.7s ease-out;
+      -moz-transition: all 0.7s ease-out;
+      transition: all 0.7s ease-out; }
     .arca .nav_wrap .nav_btn.is_expanded {
       color: #fff;
-      right: -19px; }
+      top: -19px; }
       .arca .nav_wrap .nav_btn.is_expanded .btn_txt {
-        position: relative; }
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: -4px; }
       .arca .nav_wrap .nav_btn.is_expanded:before {
-        width: 100%; }
+        height: 100%; }
       .arca .nav_wrap .nav_btn.is_expanded:after {
         content: '';
         position: absolute;
@@ -149,17 +155,20 @@ table {
   .arca .nav_wrap .bg {
     position: absolute;
     top: 5px;
-    left: 0;
+    left: 5px;
     right: 5px;
     bottom: 0;
     -webkit-border-top-right-radius: 20px;
        -moz-border-radius-topright: 20px;
             border-top-right-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+       -moz-border-radius-topleft: 20px;
+            border-top-left-radius: 20px;
     background-color: #fff;
     z-index: 200; }
   .arca .nav_wrap .profile_area .thumb_wrap {
     position: relative;
-    float: right;
+    float: left;
     margin: 5px; }
     .arca .nav_wrap .profile_area .thumb_wrap:after {
       content: '';
@@ -179,10 +188,10 @@ table {
        -moz-border-radius: 50%;
             border-radius: 50%; }
   .arca .nav_wrap .profile_area .profile_info {
-    padding: 5px 0 5px 5px;
-    text-align: center;
+    padding: 5px 10px 5px 5px;
     overflow: hidden;
-    line-height: 15px;
+    font-size: 1.8rem;
+    line-height: 30px;
     white-space: nowrap;
     text-overflow: ellipsis; }
   .arca .nav_wrap .profile_area:after {
@@ -190,72 +199,53 @@ table {
     display: block;
     clear: both; }
   .arca .nav_wrap .main_tab_list {
-    position: fixed;
-    top: 40px;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out; }
-    .arca .nav_wrap .main_tab_list.is_expanded {
-      width: 95px; }
-      .arca .nav_wrap .main_tab_list.is_expanded .tab_item .tab_txt {
-        display: block; }
+    position: relative;
+    overflow: hidden;
+    height: 100%; }
     .arca .nav_wrap .main_tab_list .tab_item {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 33.33%;
-      -webkit-border-radius: 2px;
-         -moz-border-radius: 2px;
-              border-radius: 2px;
-      color: #fff;
-      font-family: 'Jua', sans-serif;
-      font-size: 1.4rem; }
-      .arca .nav_wrap .main_tab_list .tab_item.is_clicked .top_area {
-        bottom: 100%; }
-      .arca .nav_wrap .main_tab_list .tab_item.is_clicked .bottom_area {
-        top: 100%; }
-      .arca .nav_wrap .main_tab_list .tab_item .top_area {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 50%;
-        -webkit-transition: bottom 1s ease-in-out;
-        -moz-transition: bottom 1s ease-in-out;
-        transition: bottom 1s ease-in-out; }
-      .arca .nav_wrap .main_tab_list .tab_item .bottom_area {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        -webkit-transition: top 1s ease-in-out;
-        -moz-transition: top 1s ease-in-out;
-        transition: top 1s ease-in-out; }
+      position: absolute;
+      top: 45px;
+      bottom: 0;
+      left: 50%;
+      padding: 5px;
+      width: 45%;
+      line-height: 3rem; }
       .arca .nav_wrap .main_tab_list .tab_item .tab_txt {
-        display: none;
-        position: relative; }
-      .arca .nav_wrap .main_tab_list .tab_item[name=arca_tab] span:not(:last-child) {
-        background-color: #cc0004; }
-      .arca .nav_wrap .main_tab_list .tab_item[name=kow_tab] span:not(:last-child) {
-        background-color: #a3cca3; }
-      .arca .nav_wrap .main_tab_list .tab_item[name=mff_tab] span:not(:last-child) {
+        color: #fff;
+        font-size: 1.8rem; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=arca_tab] {
+        background-color: red; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=kow_tab] {
         background-color: blue; }
-
-.arca .dimmed_layer {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-  z-index: 99; }
+      .arca .nav_wrap .main_tab_list .tab_item[name=mff_tab] {
+        background-color: green; }
+      .arca .nav_wrap .main_tab_list .tab_item.is_top {
+        z-index: 400;
+        -webkit-transform: translate(-50%, -50%) perspective(400px);
+           -moz-transform: translate(-50%, -50%) perspective(400px);
+                transform: translate(-50%, -50%) perspective(400px); }
+      .arca .nav_wrap .main_tab_list .tab_item.is_left {
+        z-index: 399;
+        -webkit-transform-origin: right;
+           -moz-transform-origin: right;
+            -ms-transform-origin: right;
+                transform-origin: right;
+        -webkit-transform: translate(-150%, -50%) perspective(400px) rotateY(-45deg);
+           -moz-transform: translate(-150%, -50%) perspective(400px) rotateY(-45deg);
+                transform: translate(-150%, -50%) perspective(400px) rotateY(-45deg); }
+      .arca .nav_wrap .main_tab_list .tab_item.is_right {
+        z-index: 399;
+        -webkit-transform-origin: left;
+           -moz-transform-origin: left;
+            -ms-transform-origin: left;
+                transform-origin: left;
+        -webkit-transform: translate(50%, -50%) perspective(400px) rotateY(45deg);
+           -moz-transform: translate(50%, -50%) perspective(400px) rotateY(45deg);
+                transform: translate(50%, -50%) perspective(400px) rotateY(45deg); }
+  .arca .nav_wrap:after {
+    content: '';
+    display: block;
+    clear: both; }
 
 .main_wrap .alliance_name {
   font-size: 2rem;
