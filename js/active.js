@@ -49,27 +49,6 @@ if (pc_media) {
     });
 }
 
-//tab_item
-let tab_item = main_tab_list.getElementsByTagName('button');
-for (var i=0; i<tab_item.length; i++) {
-    tab_item[i].addEventListener('click', function(){
-        var flag_top = this.classList.contains('is_top');
-        var flag_left = this.classList.contains('is_left');
-        var flag_right = this.classList.contains('is_right');
-
-        if (flag_top) {
-            console.log('top')
-        } else if (flag_left) {
-            
-        } else if (flag_right) {
-
-        } else {
-            console.log('먼가 잘못됬다!');
-        }
-
-    })
-}
-
 
 function nav_btn_txt_change(flag) {
     if (flag) {

@@ -20,7 +20,9 @@
 
             .nav_btn.is_expanded {
                 .btn_txt {
-                    margin-top: -2px;
+                    margin-top: 0;
+                    font-size: 1.8rem;
+                    transition: all 0.8s ease-in-out;
                 }
             }
         }
@@ -29,19 +31,21 @@
             position: absolute;
             left: 50%;
             top: -9px;
+            bottom: 0;
             transform: translateX(-50%);
             width: 80px;
-            height: 30px;
             border: 0;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
             background-color: #f1f1f1;
             box-shadow: 0 0 3px 1px #d3d3d3;
             transition: top 0.8s ease-in-out;
+            z-index: 200;
     
             .btn_txt {
                 @include font(1rem, 12px, 400, #f1f1f1);
                 font-family: 'DoHyeon', 'NotoSansKR', sans-serif;
                 word-wrap: break-word;
+                position: relative;
             }
     
             &:before {
@@ -59,11 +63,13 @@
             &.is_expanded {
                 color: #fff;
                 top: -19px;
+                z-index: 220;
+
                 .btn_txt {
                     position: relative;
                     display: inline-block;
                     vertical-align: top;
-                    margin-top: -4px;
+                    margin-top: -49px;
                 }
                 &:before {
                     height: 100%;
@@ -86,14 +92,22 @@
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
             background-color: #fff;
-            z-index: 200;
         }
 
         .profile_area {
+            position: absolute;
+            left: 50%;
+            top: 5px;
+            bottom: 0;
+            width: 80px;
+            transform: translateX(-50%);
+            z-index: 210;
+
             .thumb_wrap {
                 position: relative;
-                float: left;
-                margin: 5px;
+                display: inline-block;
+                vertical-align: top;
+                margin: 5px 5px 5px 25px;
 
                 &:after {
                     content: '';
@@ -110,68 +124,22 @@
             }
 
             .profile_info {
-                padding: 5px 10px 5px 5px;
+                padding: 5px 0;
                 overflow: hidden;
-                font-size: 1.8rem;
-                line-height: 30px;
+                text-align: center;
+                color: #333;
+                font-weight: bold;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-            }
 
-            &:after {
-                @include clear;
-            }
-        }
+                span {
+                    font-size: 1.1rem;
+                    line-height: 15px;
 
-        .main_tab_list {
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-
-            .tab_item {
-                position: absolute;
-                top: 45px;
-                bottom: 0;
-                left: 50%;
-                padding: 5px;
-                width: 45%;
-                line-height: 3rem;
-
-                .tab_txt {
-                    color: #fff;
-                    font-size: 1.8rem;
-                }
-
-                &[name$=tab] {
-
-                }
-
-                &[name=arca_tab] {
-                    background-color: red;
-                }
-
-                &[name=kow_tab] {
-                    background-color: blue;
-                }
-                &[name=mff_tab] {
-                    background-color: green;
-                }
-
-                &.is_top {
-                    z-index: 400;
-                    transform: translate(-50%,-50%) perspective(400px);
-                }
-
-                &.is_left {
-                    z-index: 399;
-                    transform-origin: right;
-                    transform: translate(-150%,-50%) perspective(400px) rotateY(-45deg);
-                }
-
-                &.is_right {
-                    z-index: 399;
-                    transform-origin: left;
-                    transform: translate(50% ,-50%) perspective(400px) rotateY(45deg);
+                    &:first-child {
+                        line-height: 20px;
+                        font-size: 1.6rem;
+                    }
                 }
             }
         }
