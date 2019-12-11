@@ -40,6 +40,10 @@
             box-shadow: 0 0 3px 1px #d3d3d3;
             transition: top 0.8s ease-in-out;
             z-index: 200;
+
+            @include galfol {
+                width: 60px;
+            }
     
             .btn_txt {
                 @include font(1rem, 12px, 400, #f1f1f1);
@@ -56,7 +60,7 @@
                 right: 0;
                 height: 0;
                 background-color: #609c7f;
-                border-radius: 8px;
+                border-radius: 8px 8px 0 0;
                 transition: all 0.7s ease-out;
             }
     
@@ -69,7 +73,7 @@
                     position: relative;
                     display: inline-block;
                     vertical-align: top;
-                    margin-top: -49px;
+                    margin-top: -47px;
                 }
                 &:before {
                     height: 100%;
@@ -144,8 +148,53 @@
             }
         }
 
-        &:after {
-            @include clear;
+        .main_tab_list {
+            position: fixed;
+            bottom: 0;
+            width: 50%;
+            box-sizing: border-box;
+            height: 95px;
+            font-size: 0;
+
+            &.left {
+                left: 0;
+                padding-right: 40px;
+                
+                @include galfol {
+                    padding-right: 30px;
+                }
+
+                .tab_item:first-child {
+                    border-top-left-radius: 20px;
+                }
+            }
+
+            &.right {
+                right: 0;
+                padding-left: 40px;
+
+                @include galfol {
+                    padding-left: 30px;
+                }
+            }
+
+            .tab_item {
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                height: 100%;
+                text-align: center;
+            }
+
+            .tab_img {
+                width: 70px;
+                height: 35px;
+
+                @include galfol {
+                    width: 40px;
+                    height: 20px;
+                }
+            }
         }
     }
 

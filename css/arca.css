@@ -115,6 +115,9 @@ table {
     -moz-transition: top 0.8s ease-in-out;
     transition: top 0.8s ease-in-out;
     z-index: 200; }
+    @media (max-width: 319px) {
+      .arca .nav_wrap .nav_btn {
+        width: 60px; } }
     .arca .nav_wrap .nav_btn .btn_txt {
       font-size: 1rem;
       line-height: 12px;
@@ -131,9 +134,9 @@ table {
       right: 0;
       height: 0;
       background-color: #609c7f;
-      -webkit-border-radius: 8px;
-         -moz-border-radius: 8px;
-              border-radius: 8px;
+      -webkit-border-radius: 8px 8px 0 0;
+         -moz-border-radius: 8px 8px 0 0;
+              border-radius: 8px 8px 0 0;
       -webkit-transition: all 0.7s ease-out;
       -moz-transition: all 0.7s ease-out;
       transition: all 0.7s ease-out; }
@@ -145,7 +148,7 @@ table {
         position: relative;
         display: inline-block;
         vertical-align: top;
-        margin-top: -49px; }
+        margin-top: -47px; }
       .arca .nav_wrap .nav_btn.is_expanded:before {
         height: 100%; }
       .arca .nav_wrap .nav_btn.is_expanded:after {
@@ -219,10 +222,44 @@ table {
         .arca .nav_wrap .profile_area .profile_info span:first-child {
           line-height: 20px;
           font-size: 1.6rem; }
-  .arca .nav_wrap:after {
-    content: '';
-    display: block;
-    clear: both; }
+  .arca .nav_wrap .main_tab_list {
+    position: fixed;
+    bottom: 0;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height: 95px;
+    font-size: 0; }
+    .arca .nav_wrap .main_tab_list.left {
+      left: 0;
+      padding-right: 40px; }
+      @media (max-width: 319px) {
+        .arca .nav_wrap .main_tab_list.left {
+          padding-right: 30px; } }
+      .arca .nav_wrap .main_tab_list.left .tab_item:first-child {
+        -webkit-border-top-left-radius: 20px;
+           -moz-border-radius-topleft: 20px;
+                border-top-left-radius: 20px; }
+    .arca .nav_wrap .main_tab_list.right {
+      right: 0;
+      padding-left: 40px; }
+      @media (max-width: 319px) {
+        .arca .nav_wrap .main_tab_list.right {
+          padding-left: 30px; } }
+    .arca .nav_wrap .main_tab_list .tab_item {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      height: 100%;
+      text-align: center; }
+    .arca .nav_wrap .main_tab_list .tab_img {
+      width: 70px;
+      height: 35px; }
+      @media (max-width: 319px) {
+        .arca .nav_wrap .main_tab_list .tab_img {
+          width: 40px;
+          height: 20px; } }
 
 .main_wrap .alliance_name {
   font-size: 2rem;
