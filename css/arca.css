@@ -223,7 +223,7 @@ table {
           line-height: 20px;
           font-size: 1.6rem; }
   .arca .nav_wrap .main_tab_list {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 50%;
     -webkit-box-sizing: border-box;
@@ -254,11 +254,11 @@ table {
       height: 100%;
       text-align: center; }
     .arca .nav_wrap .main_tab_list .tab_img {
-      width: 70px;
+      width: 35px;
       height: 35px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list .tab_img {
-          width: 40px;
+          width: 20px;
           height: 20px; } }
 
 .main_wrap .alliance_name {

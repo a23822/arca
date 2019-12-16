@@ -149,7 +149,7 @@
         }
 
         .main_tab_list {
-            position: fixed;
+            position: absolute;
             bottom: 0;
             width: 50%;
             box-sizing: border-box;
@@ -187,26 +187,15 @@
             }
 
             .tab_img {
-                width: 70px;
+                width: 35px;
                 height: 35px;
 
                 @include galfol {
-                    width: 40px;
+                    width: 20px;
                     height: 20px;
                 }
             }
         }
     }
 
-    // .dimmed_layer {
-    //     display: none;
-    //     position: fixed;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     background-color: rgba(255,255,255, 0.3);
-    //     filter: blur(3px);
-    //     z-index: 99;
-    // }
 }
