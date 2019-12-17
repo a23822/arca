@@ -260,6 +260,108 @@ table {
         .arca .nav_wrap .main_tab_list .tab_img {
           width: 20px;
           height: 20px; } }
+  .arca .nav_wrap .pop_btn_area {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    font-size: 0; }
+    .arca .nav_wrap .pop_btn_area .left_area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding-right: 40px; }
+      @media (max-width: 319px) {
+        .arca .nav_wrap .pop_btn_area .left_area {
+          padding-right: 30px; } }
+    .arca .nav_wrap .pop_btn_area .right_area {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding-left: 40px; }
+      @media (max-width: 319px) {
+        .arca .nav_wrap .pop_btn_area .right_area {
+          padding-left: 30px; } }
+    .arca .nav_wrap .pop_btn_area .btn_area {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      height: 100%; }
+      .arca .nav_wrap .pop_btn_area .btn_area .pop_btn {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+           -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
+        border: 1px solid rgba(255, 255, 255, 0.3); }
+        .arca .nav_wrap .pop_btn_area .btn_area .pop_btn:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          -webkit-box-sizing: border-box;
+             -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          -webkit-border-radius: 50%;
+             -moz-border-radius: 50%;
+                  border-radius: 50%; }
+      .arca .nav_wrap .pop_btn_area .btn_area .tab_img {
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%; }
+
+@-webkit-keyframes menu_btn_pop_up {
+  0% {
+    bottom: -40px; }
+  100% {
+    bottom: 49px; } }
+
+@-moz-keyframes menu_btn_pop_up {
+  0% {
+    bottom: -40px; }
+  100% {
+    bottom: 49px; } }
+
+@keyframes menu_btn_pop_up {
+  0% {
+    bottom: -40px; }
+  100% {
+    bottom: 49px; } }
+
+@-webkit-keyframes menu_btn_pop_down {
+  0% {
+    bottom: 49px; }
+  100% {
+    bottom: -40px; } }
+
+@-moz-keyframes menu_btn_pop_down {
+  0% {
+    bottom: 49px; }
+  100% {
+    bottom: -40px; } }
+
+@keyframes menu_btn_pop_down {
+  0% {
+    bottom: 49px; }
+  100% {
+    bottom: -40px; } }
 
 .main_wrap .alliance_name {
   font-size: 2rem;

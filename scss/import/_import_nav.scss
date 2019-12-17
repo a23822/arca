@@ -196,6 +196,90 @@
                 }
             }
         }
+
+        .pop_btn_area {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 80px;
+            font-size: 0;
+
+            .left_area {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 50%;
+                box-sizing: border-box;
+                padding-right: 40px;
+
+                @include galfol {
+                    padding-right: 30px;
+                }
+            }
+
+            .right_area {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 50%;
+                box-sizing: border-box;
+                padding-left: 40px;
+
+                @include galfol {
+                    padding-left: 30px;
+                }
+            }
+
+            .btn_area {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                width: 50%;
+                height: 100%;
+
+                .pop_btn {
+                    position: absolute;
+                    bottom: -40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border: 1px solid rgba(#fff, 0.3);
+
+                    &:after {
+                        content: '';
+                        @include mask;
+                        box-sizing: border-box;
+                        border: 1px solid rgba(0,0,0, 0.2);
+                        border-radius: 50%;
+                    }
+                }
+
+                .tab_img {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes menu_btn_pop_up {
+    0% {
+        bottom: -40px;
     }
 
+    100% {
+        bottom: 49px;
+    }
+}
+
+@keyframes menu_btn_pop_down {
+    0% {
+        bottom: 49px;
+    }
+
+    100% {
+        bottom: -40px;
+    }
 }
