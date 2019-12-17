@@ -205,6 +205,7 @@ table {
     .arca .nav_wrap .profile_area .thumb {
       width: 30px;
       height: 30px;
+      background-color: blue;
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
               border-radius: 50%; }
@@ -229,8 +230,9 @@ table {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
-    height: 95px;
-    font-size: 0; }
+    height: 100%;
+    font-size: 0;
+    overflow: hidden; }
     .arca .nav_wrap .main_tab_list.left {
       left: 0;
       padding-right: 40px; }
@@ -252,10 +254,24 @@ table {
       vertical-align: top;
       width: 50%;
       height: 100%;
-      text-align: center; }
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 5px 0 0 0;
+      padding-top: 20px;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box; }
+      .arca .nav_wrap .main_tab_list .tab_item[id=arca_tab] {
+        background-color: red; }
+      .arca .nav_wrap .main_tab_list .tab_item[id=kow_tab] {
+        background-color: blue; }
+      .arca .nav_wrap .main_tab_list .tab_item[id=mff_tab] {
+        background-color: yellow; }
     .arca .nav_wrap .main_tab_list .tab_img {
+      display: inline-block;
       width: 35px;
-      height: 35px; }
+      height: 35px;
+      background-color: black; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list .tab_img {
           width: 20px;

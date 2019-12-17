@@ -124,7 +124,8 @@
             .thumb {
                 width: 30px;
                 height: 30px;
-                border-radius: 50%;;
+                background-color: blue;
+                border-radius: 50%;
             }
 
             .profile_info {
@@ -153,8 +154,9 @@
             bottom: 0;
             width: 50%;
             box-sizing: border-box;
-            height: 95px;
+            height: 100%;
             font-size: 0;
+            overflow: hidden;
 
             &.left {
                 left: 0;
@@ -184,11 +186,29 @@
                 width: 50%;
                 height: 100%;
                 text-align: center;
+                font-size: 1.6rem;
+                margin: 5px 0 0 0;
+                padding-top: 20px;
+                box-sizing: border-box;
+                
+                &[id=arca_tab] {
+                    background-color: red;
+                }
+
+                &[id=kow_tab] {
+                    background-color: blue;
+                }
+
+                &[id=mff_tab] {
+                    background-color: yellow;
+                }
             }
 
             .tab_img {
+                display: inline-block;
                 width: 35px;
                 height: 35px;
+                background-color: black;
 
                 @include galfol {
                     width: 20px;

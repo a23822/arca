@@ -18,12 +18,23 @@
             </button>
             <div class="bg">
                 <div class="profile_area">
-                    <div class="thumb_wrap">
-                        <img src="https://picsum.photos/30/30" class="thumb" alt=""/>
+                    <!-- 로그인 시 -->
+                    <div class="profile_wrap">
+                        <div class="thumb_wrap">
+                            <img src="#" class="thumb" alt=""/>
+                        </div>
+                        <div class="profile_info">
+                            <span id="userGrade">Arca</span><br/>
+                            <span id="userName">가of다라마</span>
+                        </div>
                     </div>
-                    <div class="profile_info">
-                        <span id="userGrade">Arca</span><br/>
-                        <span id="userName">가of다라마</span>
+                    <!-- 비로그인 시 -->
+                    <div class="profile_wrap">
+                        <div class="profile_info">
+                            <a href="#" id="login_btn" class="login_btn" role="button">
+                                로그인
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -36,7 +47,7 @@
                 </a>
             </div>
             <div class="main_tab_list right">
-                <a href="#" id="arca_tab" role="tab" class="tab_item" aria-selected="true">
+                <a href="#" id="mff_tab" role="tab" class="tab_item" aria-selected="true">
                     세번째
                 </a>
             </div>
@@ -44,19 +55,19 @@
                 <div class="left_area">
                     <div class="btn_area">
                         <a href="#" id="arca_btn" role="button" class="pop_btn">
-                            <img src="https://picsum.photos/35/35" class="tab_img" alt=""/> 
+                            <img src="#" class="tab_img" alt=""/> 
                         </a>
                     </div>
                     <div class="btn_area">
                         <a href="#" id="kow_btn" role="button" class="pop_btn">
-                            <img src="https://picsum.photos/35/35" class="tab_img" alt=""/> 
+                            <img src="#" class="tab_img" alt=""/> 
                         </a>
                     </div>
                 </div>
                 <div class="right_area">
                     <div class="btn_area">
                         <a href="#" id="mff_btn" role="button" class="pop_btn">
-                            <img src="https://picsum.photos/35/35" class="tab_img" alt=""/> 
+                            <img src="#" class="tab_img" alt=""/> 
                         </a>
                     </div>
                 </div>
@@ -158,10 +169,69 @@
         projectId: "arca-aeb1a",
         storageBucket: "arca-aeb1a.appspot.com",
         messagingSenderId: "581342567551",
-        appId: "1:581342567551:web:035dbb95532d43c13bb34a",
-        measurementId: "G-LHEQGWGMTN"
+        appId: "1:581342567551:web:d86b698aea7563853bb34a",
+        measurementId: "G-5WWZWNK5FL"
     };
+
     var functions = firebase.app().functions('us-central1');
+    /*
+    // default Auth
+    // 신규 가입 메서드
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
+    // 기존 사용자 로그인
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
+
+    //인증 상태 관찰자 설정 및 사용자 데이터 가져오기
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            // User is signed in.
+            var displayName = user.displayName;
+            var email = user.email;
+            var emailVerified = user.emailVerified;
+            var photoURL = user.photoURL;
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            var providerData = user.providerData;
+            // ...
+        } else {
+            // User is signed out.
+            // ...
+        }
+    });
+    */
+    // google auth
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    // 인증하기
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        
+        console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
+    // ...
+    }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+    });
+
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();

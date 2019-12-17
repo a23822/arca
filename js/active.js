@@ -79,6 +79,7 @@ function nav_btn_second_click(flag) {
         setTimeout(function() {
             nav_btn.classList.remove('is_expanded');
             nav_btn_txt.innerHTML = 'CLOSE';
+            pop_btn_area.style.display = 'none';
         }, 800);
 
         return flag = true;
@@ -95,10 +96,9 @@ function menu_btn_pop_up() {
 }
 
 function menu_btn_pop_down() {
-    pop_btn_area.style.display = 'none';
     for (var i = 0; i<pop_btn.length; i++) {
         j = pop_btn.length - i -1;
-        var anim_delay = (0.8 + 0.15 * pop_btn.length) - 0.15 * j;
+        var anim_delay = (0.5 + 0.15 * pop_btn.length) - 0.15 * j;
         pop_btn[j].style['animation'] = "menu_btn_pop_down " + String(anim_delay) + "s ease-in-out forwards";
     }
 }
