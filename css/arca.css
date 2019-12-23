@@ -197,7 +197,7 @@ table {
        -moz-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    z-index: 210; }
+    z-index: 200; }
     .arca .nav_wrap .profile_area .thumb_wrap {
       position: relative;
       display: inline-block;
@@ -249,7 +249,7 @@ table {
     overflow: hidden; }
     .arca .nav_wrap .main_tab_list.left {
       left: 5px;
-      padding-right: 40px; }
+      padding-right: 45px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list.left {
           padding-right: 30px; } }
@@ -259,10 +259,10 @@ table {
                 border-top-left-radius: 20px; }
     .arca .nav_wrap .main_tab_list.right {
       right: 5px;
-      padding-left: 40px; }
+      padding-left: 45px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list.right {
-          padding-left: 30px; } }
+          padding-left: 35px; } }
     .arca .nav_wrap .main_tab_list .tab_item {
       display: inline-block;
       vertical-align: top;
@@ -309,7 +309,7 @@ table {
       padding-right: 40px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .pop_btn_area .left_area {
-          padding-right: 30px; } }
+          padding-right: 35px; } }
     .arca .nav_wrap .pop_btn_area .right_area {
       position: absolute;
       top: 0;
@@ -322,7 +322,7 @@ table {
       padding-left: 40px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .pop_btn_area .right_area {
-          padding-left: 30px; } }
+          padding-left: 35px; } }
     .arca .nav_wrap .pop_btn_area .btn_area {
       position: relative;
       display: inline-block;

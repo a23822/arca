@@ -105,7 +105,7 @@
             bottom: 0;
             width: 80px;
             transform: translateX(-50%);
-            z-index: 190;
+            z-index: 200;
 
             .thumb_wrap {
                 position: relative;
@@ -164,7 +164,7 @@
 
             &.left {
                 left: 5px;
-                padding-right: 40px;
+                padding-right: 45px;
                 
                 @include galfol {
                     padding-right: 30px;
@@ -177,10 +177,10 @@
 
             &.right {
                 right: 5px;
-                padding-left: 40px;
+                padding-left: 45px;
 
                 @include galfol {
-                    padding-left: 30px;
+                    padding-left: 35px;
                 }
             }
 
@@ -239,7 +239,7 @@
                 padding-right: 40px;
 
                 @include galfol {
-                    padding-right: 30px;
+                    padding-right: 35px;
                 }
             }
 
@@ -253,7 +253,7 @@
                 padding-left: 40px;
 
                 @include galfol {
-                    padding-left: 30px;
+                    padding-left: 35px;
                 }
             }
 
