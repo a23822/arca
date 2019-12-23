@@ -58,6 +58,7 @@ if (pc_media) {
 
 function nav_btn_txt_change(flag) {
     if (flag) {
+        nav_btn_txt.style.display = 'inline-block';
         nav_btn_txt.innerHTML = 'CLOSE';
     } else {
         nav_btn_txt.innerHTML = 'OPEN';
@@ -79,6 +80,7 @@ function nav_btn_second_click(flag) {
         setTimeout(function() {
             nav_btn.classList.remove('is_expanded');
             nav_btn_txt.innerHTML = 'CLOSE';
+            nav_btn_txt.style.display = 'none'
             pop_btn_area.style.display = 'none';
         }, 800);
 

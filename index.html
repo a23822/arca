@@ -6,33 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>arca</title>
     <link rel="stylesheet" href="./css/arca.css"/>
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Noto+Sans+KR|Noto+Serif+KR&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="arca">
         <h1 class="blind_tit">아르카디아 클랜 앱에 오신 걸 환영합니다</h1>
         <nav class="nav_wrap">
             <button id="nav_btn" type="button" class="nav_btn">
-                <span class="btn_txt">OPEN</span>
+                <span class="btn_txt" style="display: inline-block;">OPEN</span>
             </button>
             <div class="bg">
                 <div class="profile_area">
                     <!-- 로그인 시 -->
-                    <div class="profile_wrap">
+                    <div class="profile_wrap" style="display: none;">
                         <div class="thumb_wrap">
-                            <img src="#" class="thumb" alt=""/>
+                            <img src="./img/sample_profile.png" width="30" height="30" class="thumb" alt=""/>
                         </div>
                         <div class="profile_info">
-                            <span id="userGrade">Arca</span><br/>
+                            <span id="userGrade">Label</span><br/>
                             <span id="userName">가of다라마</span>
                         </div>
                     </div>
                     <!-- 비로그인 시 -->
-                    <div class="profile_wrap">
+                    <div class="profile_wrap" style="display: block;">
                         <div class="profile_info">
                             <a href="#" id="login_btn" class="login_btn" role="button">
-                                로그인
+                                <img src="./svg/sign-in-alt.svg" width="15" height="15" class="ico_sign_in" alt="로그인"/></br>
+                                <span class="sign_txt">로그인</span>
                             </a>
                         </div>
                     </div>
@@ -51,23 +50,23 @@
                     세번째
                 </a>
             </div>
-            <div class="pop_btn_area">
+            <div class="pop_btn_area" style="display:none;">
                 <div class="left_area">
                     <div class="btn_area">
                         <a href="#" id="arca_btn" role="button" class="pop_btn">
-                            <img src="#" class="tab_img" alt=""/> 
+                            <img src="./img/sample.jpg" width="35" height="35" class="tab_img" alt=""/> 
                         </a>
                     </div>
                     <div class="btn_area">
                         <a href="#" id="kow_btn" role="button" class="pop_btn">
-                            <img src="#" class="tab_img" alt=""/> 
+                            <img src="./img/sample.jpg" width="35" height="35" class="tab_img" alt=""/> 
                         </a>
                     </div>
                 </div>
                 <div class="right_area">
                     <div class="btn_area">
                         <a href="#" id="mff_btn" role="button" class="pop_btn">
-                            <img src="#" class="tab_img" alt=""/> 
+                            <img src="./img/sample.jpg" width="35" height="35" class="tab_img" alt=""/> 
                         </a>
                     </div>
                 </div>
@@ -209,6 +208,11 @@
         }
     });
     */
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
     // google auth
     var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -231,10 +235,6 @@
         var credential = error.credential;
         // ...
     });
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 </script>
 </body>
 </html>

@@ -55,6 +55,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@font-face {
+  font-family: DoHyeon;
+  src: url("../../fonts/Do_Hyeon/DoHyeon-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: Jua;
+  src: url("../../fonts/Jua/Jua-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: Noto-sans-kr;
+  src: url("../../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf") format("opentype"); }
+
 .arca {
   position: relative;
   background-color: #77be75; }
@@ -123,7 +135,7 @@ table {
       line-height: 12px;
       font-weight: 400;
       color: #f1f1f1;
-      font-family: 'DoHyeon', 'NotoSansKR', sans-serif;
+      font-family: DoHyeon, Noto-sans-kr, sans-serif;
       word-wrap: break-word;
       position: relative; }
     .arca .nav_wrap .nav_btn:before {
@@ -203,8 +215,6 @@ table {
                 border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.3); }
     .arca .nav_wrap .profile_area .thumb {
-      width: 30px;
-      height: 30px;
       background-color: blue;
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
@@ -223,6 +233,10 @@ table {
         .arca .nav_wrap .profile_area .profile_info span:first-child {
           line-height: 20px;
           font-size: 1.6rem; }
+      .arca .nav_wrap .profile_area .profile_info .sign_txt {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 auto; }
   .arca .nav_wrap .main_tab_list {
     position: absolute;
     bottom: 0;
@@ -234,7 +248,7 @@ table {
     font-size: 0;
     overflow: hidden; }
     .arca .nav_wrap .main_tab_list.left {
-      left: 0;
+      left: 5px;
       padding-right: 40px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list.left {
@@ -244,7 +258,7 @@ table {
            -moz-border-radius-topleft: 20px;
                 border-top-left-radius: 20px; }
     .arca .nav_wrap .main_tab_list.right {
-      right: 0;
+      right: 5px;
       padding-left: 40px; }
       @media (max-width: 319px) {
         .arca .nav_wrap .main_tab_list.right {
