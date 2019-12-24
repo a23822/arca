@@ -283,13 +283,7 @@ table {
         background-color: yellow; }
     .arca .nav_wrap .main_tab_list .tab_img {
       display: inline-block;
-      width: 35px;
-      height: 35px;
       background-color: black; }
-      @media (max-width: 319px) {
-        .arca .nav_wrap .main_tab_list .tab_img {
-          width: 20px;
-          height: 20px; } }
   .arca .nav_wrap .pop_btn_area {
     position: fixed;
     left: 0;
@@ -333,11 +327,14 @@ table {
         position: absolute;
         bottom: -40px;
         left: 50%;
+        width: 35px;
+        height: 35px;
         -webkit-transform: translateX(-50%);
            -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
-        border: 1px solid rgba(255, 255, 255, 0.3); }
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center; }
         .arca .nav_wrap .pop_btn_area .btn_area .pop_btn:after {
           content: '';
           position: absolute;
@@ -352,6 +349,14 @@ table {
           -webkit-border-radius: 50%;
              -moz-border-radius: 50%;
                   border-radius: 50%; }
+        @media (max-width: 319px) {
+          .arca .nav_wrap .pop_btn_area .btn_area .pop_btn {
+            width: 20px;
+            height: 20px; } }
+        .arca .nav_wrap .pop_btn_area .btn_area .pop_btn[id=setting_btn] {
+          background-color: #fff; }
+          .arca .nav_wrap .pop_btn_area .btn_area .pop_btn[id=setting_btn] .tab_img {
+            fill: #808080; }
       .arca .nav_wrap .pop_btn_area .btn_area .tab_img {
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;

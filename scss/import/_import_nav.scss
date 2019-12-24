@@ -210,14 +210,7 @@
 
             .tab_img {
                 display: inline-block;
-                width: 35px;
-                height: 35px;
                 background-color: black;
-
-                @include galfol {
-                    width: 20px;
-                    height: 20px;
-                }
             }
         }
 
@@ -268,8 +261,11 @@
                     position: absolute;
                     bottom: -40px;
                     left: 50%;
+                    width: 35px;
+                    height: 35px;
                     transform: translateX(-50%);
                     border: 1px solid rgba(#fff, 0.3);
+                    text-align: center;
 
                     &:after {
                         content: '';
@@ -277,6 +273,20 @@
                         box-sizing: border-box;
                         border: 1px solid rgba(0,0,0, 0.2);
                         border-radius: 50%;
+                    }
+
+
+                    @include galfol {
+                        width: 20px;
+                        height: 20px;
+                    }
+                    
+                    &[id=setting_btn] {
+                        background-color: #fff;
+
+                        .tab_img {
+                            fill: #808080;
+                        }
                     }
                 }
 
