@@ -77,6 +77,81 @@ table {
     color: transparent;
     white-space: nowrap;
     overflow: hidden; }
+  .arca .sign_wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000; }
+    .arca .sign_wrap .dimmed_layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7); }
+    .arca .sign_wrap .form_wrap {
+      position: relative;
+      width: 80%;
+      margin: 10% auto;
+      overflow-y: auto;
+      background-color: #fff;
+      z-index: 1010;
+      -webkit-border-radius: 20px;
+         -moz-border-radius: 20px;
+              border-radius: 20px;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 30px; }
+    .arca .sign_wrap .form_item + .form_item {
+      margin-top: 20px; }
+    .arca .sign_wrap .form_item:after {
+      content: '';
+      display: block;
+      clear: both; }
+    .arca .sign_wrap .form_item .notice_wrap {
+      float: right; }
+    .arca .sign_wrap .form_item .label {
+      display: block;
+      overflow: hidden;
+      line-height: 20px;
+      font-size: 1.6rem; }
+    .arca .sign_wrap .form_item .input_box {
+      width: 100%;
+      margin-top: 3px;
+      border-color: #000;
+      border-style: solid;
+      border-width: 0 0 1px;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 5px; }
+
+@-webkit-keyframes gradient_fluid {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@-moz-keyframes gradient_fluid {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes gradient_fluid {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 .arca .nav_wrap {
   position: fixed;
@@ -333,7 +408,9 @@ table {
            -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
         text-align: center; }
         .arca .nav_wrap .pop_btn_area .btn_area .pop_btn:after {
           content: '';

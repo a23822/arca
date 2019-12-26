@@ -30,7 +30,7 @@
                     <div class="profile_wrap" style="display: block;">
                         <div class="profile_info">
                             <a href="#" id="login_btn" class="login_btn" role="button">
-                                <img src="./svg/sign-in-alt.svg" width="15" height="15" class="ico_sign_in" alt="로그인"/></br>
+                                <img src="./svg/ico_sign_in.svg" width="15" height="15" class="ico_sign_in" alt="로그인"/></br>
                                 <span class="sign_txt">로그인</span>
                             </a>
                         </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="btn_area">
                         <a href="#" id="setting_btn" role="button" class="pop_btn">
-                            <img src="./svg/setting.svg" width="25" height="25" class="tab_img" style="margin-top:5px;" alt=""/>
+                            <img src="./svg/ico_setting.svg" width="25" height="25" class="tab_img" style="margin-top:5px;" alt=""/>
                         </a>
                     </div>
                 </div>
@@ -80,14 +80,73 @@
         
         <div class="sign_wrap">
             <div class="dimmed_layer"></div>
-            <div class="sign_area">
+            <div class="form_wrap">
                 <form>
                     <div class="form_item">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <p class="notice" style="display: none;">
+                            가급적이면 게임 상 에이전트명과 통일해주시면 감사하겠습니다.
+                        </p>
                         <label for="input_id" class="label">아이디</label>
-                        <input id="input_id" class="input_box"/>
+                        <input type="text" id="input_id" class="input_box"/>
                     </div>
-                    
-                    
+                    <div class="form_item">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <label for="input_pw" class="label">비밀번호</label>
+                        <input type="text" id="input_pw" class="input_box"/>
+                    </div>
+                    <div class="form_item">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <p class="notice" style="display: none;">
+                            위에서 설정한 비밀번호 그대로 입력해주세요.
+                        </p>
+                        <label for="input_pw_chk" class="label">비밀번호 확인</label>
+                        <input type="password" id="input_pw_chk" class="input_box"/>
+                    </div>
+                    <div class="form_item">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <p class="notice" style="display: none;">
+                            환경설정에서 확일할 수 있는 고유 id 번호 앞에서 5글자를 입력해주세요.
+                            해당 정보는 운영진의 참고용도로만 쓰입니다.
+                            절대 운영진에서 공개하지 않습니다.
+                        </p>
+                        <label for="input_mffid" class="label">고유번호</label>
+                        <input type="text" id="input_mffid" class="input_box"/>
+                    </div>
+                    <div class="form_item type_gender">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <p class="notice" style="display: none;">
+                            해당 정보는 운영진의 참고용도로만 쓰입니다.
+                            절대 운영진에서 공개하지 않습니다.
+                        </p>
+                        <p class="label">성별</p>
+                        <input id="input_male" name="input_gender" type="radio" class="input_box"/>
+                        <label for="input_male" class="radio_label">남자</label>
+                        <input id="input_female" name="input_gender" type="radio" class="input_box"/>
+                        <label for="input_female" class="radio_label">여자</label>
+                        <input id="input_unknown" name="input_gender" type="radio" class="input_box"/>
+                        <label for="input_unknown" class="radio_label">외계인</label>
+                    </div>
+                    <div class="form_item type_age">
+                        <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
+                        <p class="notice" style="display: none;">
+                            해당 정보는 운영진의 참고용도로만 쓰입니다.
+                            절대 운영진에서 공개하지 않습니다.w
+                        </p>
+                        <p class="label">나이</p>
+                        <input id="input_age_20" name="input_age" type="radio" class="input_box"/>
+                        <label for="input_age_20" class="radio_label">20대</label>
+                        <input id="input_age_30" name="input_age" type="radio" class="input_box"/>
+                        <label for="input_age_30" class="radio_label">30대</label>
+                        <input id="input_age_40" name="input_age" type="radio" class="input_box"/>
+                        <label for="input_age_40" class="radio_label">40대</label>
+                        <input id="input_age_50" name="input_age" type="radio" class="input_box"/>
+                        <label for="input_age_50" class="radio_label">50대</label>
+                    </div>
+                    <div class="btn_area">
+                        <button type="submit" class="submit_btn">확인</button>
+                        <button type="button" class="cancle_btn">취소</button>
+                    </div>
                 </form>
             </div>
         </div>
