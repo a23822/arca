@@ -99,7 +99,7 @@ function menu_btn_pop_up() {
 
 function menu_btn_pop_down() {
     for (var i = 0; i<pop_btn.length; i++) {
-        j = pop_btn.length - i -1;
+        var j = pop_btn.length - i -1;
         var anim_delay = (0.5 + 0.15 * pop_btn.length) - 0.15 * j;
         pop_btn[j].style['animation'] = "menu_btn_pop_down " + String(anim_delay) + "s ease-in-out forwards";
     }
@@ -112,6 +112,23 @@ function delay(time) {
     do {
         temp = Date.now();
     } while (temp - date < time);
+}
+
+// 로그인/회원가입 관련
+let sign_wrap = document.getElementsByClassName('sign_wrap')[0];
+let login_btn = document.getElementById('login_btn');
+
+login_btn.addEventListener('click', function(){
+    show_signform();
+})
+
+function exit_signform() {
+    sign_wrap.classList.remove('is_shown');
+}
+
+function show_signform() {
+    sign_wrap.classList.add('is_shown');
+    // nav_wrap.classList.remove('is_opened');
 }
 
 
