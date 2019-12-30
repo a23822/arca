@@ -111,7 +111,7 @@ table {
          -moz-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
               transform: translateY(-50%);
-      background-color: #fff;
+      background-color: transparent;
       z-index: 1010;
       -webkit-border-radius: 20px;
          -moz-border-radius: 20px;
@@ -126,29 +126,30 @@ table {
       right: 0;
       height: 50px;
       background-color: #fff; }
-    .arca .sign_wrap .form_item + .form_item {
-      margin-top: 50px; }
-    .arca .sign_wrap .form_item:after {
-      content: '';
-      display: block;
-      clear: both; }
-    .arca .sign_wrap .form_item .notice_wrap {
-      float: right; }
-    .arca .sign_wrap .form_item .label {
-      display: block;
-      overflow: hidden;
-      line-height: 20px;
-      font-size: 1.6rem; }
-    .arca .sign_wrap .form_item .input_box {
+      .arca .sign_wrap .btn_area .signin_btn {
+        float: left;
+        width: 33.33%;
+        height: 100%;
+        background-color: #c2e8ce; }
+      .arca .sign_wrap .btn_area .signup_btn {
+        float: left;
+        width: 33.33%;
+        height: 100%;
+        background-color: #77be75; }
+      .arca .sign_wrap .btn_area .cancle_btn {
+        display: block;
+        width: 33.33%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #fa697c; }
+      .arca .sign_wrap .btn_area:after {
+        content: '';
+        display: block;
+        clear: both; }
+    .arca .sign_wrap .form_list {
       width: 100%;
-      margin-top: 3px;
-      border-color: #000;
-      border-style: solid;
-      border-width: 0 0 1px;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-              box-sizing: border-box;
-      padding: 5px; }
+      height: 100px;
+      background-color: white; }
 
 @-webkit-keyframes gradient_fluid {
   0% {

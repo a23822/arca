@@ -81,8 +81,34 @@
         <div class="sign_wrap">
             <div class="dimmed_layer"></div>
             <div class="form_wrap">
-                <form>
-                    <div class="form_inner">
+                <form autocomplete="off">
+                    <ol class="form_list">
+                        <li class="form_item">
+
+                        </li>
+                        <li class="form_item">
+
+                        </li>
+                        <li class="form_item">
+
+                        </li>
+                        <li class="form_item">
+
+                        </li>
+                        <li class="form_item">
+
+                        </li>
+                        <li class="form_item">
+
+                        </li>
+                    </ol>
+                    <div class="progress_bar">0/6</div>
+                    <div class="btn_area">
+                        <button type="submit" class="signin_btn">로그인</button>
+                        <button type="button" class="signup_btn">회원가입</button>
+                        <button type="button" class="cancle_btn">취소</button>
+                    </div>
+                    <!-- <div class="form_inner">
                         <div class="form_item">
                             <a href="#" role="button" class="notice_wrap"><object height="15" data="./svg/ico_explain.svg" type="image/svg+xml" class="notice_btn">주의</object></a>
                             <p class="notice" style="display: none;">
@@ -145,10 +171,7 @@
                             <label for="input_age_50" class="radio_label">50대</label>
                         </div>
                     </div>
-                    <div class="btn_area">
-                        <button type="submit" class="submit_btn">확인</button>
-                        <button type="button" class="cancle_btn">취소</button>
-                    </div>
+                     -->
                 </form>
             </div>
         </div>
@@ -232,24 +255,18 @@
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.6.1/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.6.1/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
     <script type="module" src="./js/active.js"></script>
+    <script src="./config.js"></script>
     <script>
         // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDe0Z09HqXB6qdpSPlv3Q03trD5r1F0qI0",
-            authDomain: "arca-aeb1a.firebaseapp.com",
-            databaseURL: "https://arca-aeb1a.firebaseio.com",
-            projectId: "arca-aeb1a",
-            storageBucket: "arca-aeb1a.appspot.com",
-            messagingSenderId: "581342567551",
-            appId: "1:581342567551:web:d86b698aea7563853bb34a",
-            measurementId: "G-5WWZWNK5FL"
-        };
 
         var functions = firebase.app().functions('us-central1');
         /*

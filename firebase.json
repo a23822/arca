@@ -3,7 +3,8 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "",
+    "site": "arca-aeb1a",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
