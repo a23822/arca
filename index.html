@@ -14,42 +14,6 @@
             <button id="nav_btn" type="button" class="nav_btn">
                 <span class="btn_txt" style="display: inline-block;">OPEN</span>
             </button>
-            <div class="bg">
-                <div class="profile_area">
-                    <!-- 로그인 시 -->
-                    <div class="profile_wrap" style="display: none;">
-                        <div class="thumb_wrap">
-                            <img src="./img/sample_profile.png" width="30" height="30" class="thumb" alt=""/>
-                        </div>
-                        <div class="profile_info">
-                            <span id="userGrade">Label</span><br/>
-                            <span id="userName">가of다라마</span>
-                        </div>
-                    </div>
-                    <!-- 비로그인 시 -->
-                    <div class="profile_wrap" style="display: block;">
-                        <div class="profile_info">
-                            <a href="javascript:void(0);" id="login_btn" class="login_btn" role="button">
-                                <img src="./svg/ico_sign_in.svg" width="15" height="15" class="ico_sign_in" alt="로그인"/></br>
-                                <span class="sign_txt">로그인</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main_tab_list left" role="tablist">
-                <a href="#" id="arca_tab" role="tab" class="tab_item" aria-selected="true">
-                    첫번째
-                </a>
-                <a href="#" id="kow_tab" role="tab" class="tab_item" aria-selected="false">
-                    두번째
-                </a>
-            </div>
-            <div class="main_tab_list right">
-                <a href="#" id="mff_tab" role="tab" class="tab_item" aria-selected="true">
-                    세번째
-                </a>
-            </div>
             <div class="pop_btn_area" style="display:none;">
                 <div class="left_area">
                     <div class="btn_area">
@@ -76,6 +40,32 @@
                     </div>
                 </div>
             </div>
+            <ul class="side_menu_area left">
+                <li class="item">
+                    <a href="javascript:void(0);" class="profile_link img">
+                        <img id="profile_img" src="./img/sample_profile.png" width="35" height="35" class="profile_img"/>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="javascript:void(0);" class="profile_link userid">
+                        <span id="profile_id" class="profile_id">가나다라마바사아자차카타파하</span>
+                    </a>
+                </li>
+                <li class="item status_msg">
+
+                </li>
+            </ul>
+            <ul class="side_menu_area right">
+                <li class="item">
+
+                </li>
+                <li class="item">
+
+                </li>
+                <li class="item">
+
+                </li>
+            </ul>
         </nav>
         
         <div class="sign_wrap">

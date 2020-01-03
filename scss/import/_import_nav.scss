@@ -3,12 +3,9 @@
         position: fixed;
         left: 0;
         right: 0;
-        bottom: -100px;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
-        height: 100px;
+        bottom: -150px;
+        height: 150px;
         z-index: 100;
-        background-color: #e4eee9;
         transition: bottom 0.5s ease-out;
 
         &.is_opened {
@@ -33,7 +30,7 @@
             top: -9px;
             bottom: 0;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             border: 0;
             border-radius: 8px 8px 0 0;
             background-color: #f1f1f1;
@@ -73,7 +70,7 @@
                     position: relative;
                     display: inline-block;
                     vertical-align: top;
-                    margin-top: -47px;
+                    margin-top: -72px;
                 }
                 &:before {
                     height: 100%;
@@ -84,133 +81,6 @@
                     border: 1px solid rgba(#000, 0.1);
                     border-radius: 7px;
                 }
-            }
-        }
-
-        .bg {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 0;
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
-            background-color: #fff;
-        }
-
-        .profile_area {
-            position: absolute;
-            left: 50%;
-            top: 5px;
-            bottom: 0;
-            width: 80px;
-            transform: translateX(-50%);
-            z-index: 200;
-
-            .thumb_wrap {
-                position: relative;
-                display: inline-block;
-                vertical-align: top;
-                margin: 5px 5px 5px 25px;
-
-                &:after {
-                    content: '';
-                    @include mask;
-                    border-radius: 50%;
-                    border: 1px solid rgba(0,0,0, 0.3);
-                }
-            }
-
-            .thumb {
-                background-color: blue;
-                border-radius: 50%;
-            }
-
-            .profile_info {
-                padding: 5px 0;
-                overflow: hidden;
-                text-align: center;
-                color: #333;
-                font-weight: bold;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-
-                span {
-                    font-size: 1.1rem;
-                    line-height: 15px;
-
-                    &:first-child {
-                        line-height: 20px;
-                        font-size: 1.6rem;
-                    }
-                }
-
-                .sign_txt {
-                    display: inline-block;
-                    vertical-align: top;
-                    margin: 0 auto;
-                }
-            }
-        }
-
-        .main_tab_list {
-            position: absolute;
-            bottom: 0;
-            width: 50%;
-            box-sizing: border-box;
-            height: 100%;
-            font-size: 0;
-            overflow: hidden;
-
-            &.left {
-                left: 5px;
-                padding-right: 45px;
-                
-                @include galfol {
-                    padding-right: 30px;
-                }
-
-                .tab_item:first-child {
-                    border-top-left-radius: 20px;
-                }
-            }
-
-            &.right {
-                right: 5px;
-                padding-left: 45px;
-
-                @include galfol {
-                    padding-left: 35px;
-                }
-            }
-
-            .tab_item {
-                display: inline-block;
-                vertical-align: top;
-                width: 50%;
-                height: 100%;
-                text-align: center;
-                font-size: 1.6rem;
-                margin: 5px 0 0 0;
-                padding-top: 20px;
-                box-sizing: border-box;
-                
-                &[id=arca_tab] {
-                    background-color: red;
-                }
-
-                &[id=kow_tab] {
-                    background-color: blue;
-                }
-
-                &[id=mff_tab] {
-                    background-color: yellow;
-                }
-            }
-
-            .tab_img {
-                display: inline-block;
-                background-color: black;
             }
         }
 
@@ -292,6 +162,61 @@
 
                 .tab_img {
                     border-radius: 50%;
+                }
+            }
+        }
+
+        .side_menu_area {
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            width: 50%;
+
+            &.left {
+                right: 50%;
+            }
+
+            &.right {
+                left: 50%;
+            }
+
+            .item {
+                height: 41px;
+
+                & + .item {
+                    margin-top: 9px;
+                }
+
+                &:after {
+                    @include clear;
+                }
+            }
+
+            .profile_link {
+                float: right;
+                height: 100%;
+                border-radius: 30px 0 0 30px;
+                background-color: red;
+
+                &.img {
+                    width: 71px;
+                }
+
+                &.userid {
+                    width: 100px;
+                    padding: 0 30px 0 10px;
+                }
+                
+                .profile_img {
+                    margin: 3px 0 0 3px;
+                }
+
+                .profile_id {
+                    display: block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 41px;
                 }
             }
         }
