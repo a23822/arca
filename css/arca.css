@@ -193,6 +193,8 @@ table {
       -webkit-transition: all 0.8s ease-in-out;
       -moz-transition: all 0.8s ease-in-out;
       transition: all 0.8s ease-in-out; }
+    .arca .nav_wrap.is_opened .side_menu_area .profile_addon {
+      width: 140px; }
   .arca .nav_wrap .nav_btn {
     position: absolute;
     left: 50%;
@@ -248,7 +250,7 @@ table {
         position: relative;
         display: inline-block;
         vertical-align: top;
-        margin-top: -72px; }
+        margin-top: -73px; }
       .arca .nav_wrap .nav_btn.is_expanded:before {
         height: 100%; }
       .arca .nav_wrap .nav_btn.is_expanded:after {
@@ -351,6 +353,7 @@ table {
     .arca .nav_wrap .side_menu_area.right {
       left: 50%; }
     .arca .nav_wrap .side_menu_area .item {
+      position: relative;
       height: 41px; }
       .arca .nav_wrap .side_menu_area .item + .item {
         margin-top: 9px; }
@@ -359,25 +362,48 @@ table {
         display: block;
         clear: both; }
     .arca .nav_wrap .side_menu_area .profile_link {
+      position: relative;
       float: right;
       height: 100%;
       -webkit-border-radius: 30px 0 0 30px;
          -moz-border-radius: 30px 0 0 30px;
               border-radius: 30px 0 0 30px;
-      background-color: red; }
+      background-color: red;
+      z-index: 199; }
       .arca .nav_wrap .side_menu_area .profile_link.img {
         width: 71px; }
       .arca .nav_wrap .side_menu_area .profile_link.userid {
         width: 100px;
         padding: 0 30px 0 10px; }
       .arca .nav_wrap .side_menu_area .profile_link .profile_img {
-        margin: 3px 0 0 3px; }
+        margin: 6px 0 0 6px; }
       .arca .nav_wrap .side_menu_area .profile_link .profile_id {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        line-height: 41px; }
+        line-height: 42px; }
+    .arca .nav_wrap .side_menu_area .profile_addon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 30px;
+      background-color: yellow;
+      -webkit-border-radius: 30px;
+         -moz-border-radius: 30px;
+              border-radius: 30px;
+      -webkit-transition: width 1.5s ease-in;
+      -moz-transition: width 1.5s ease-in;
+      transition: width 1.5s ease-in;
+      -webkit-transition-delay: 0.35s;
+         -moz-transition-delay: 0.35s;
+              transition-delay: 0.35s;
+      z-index: 195; }
+      .arca .nav_wrap .side_menu_area .profile_addon .user_label {
+        display: block;
+        padding-left: 30px;
+        line-height: 42px; }
 
 @-webkit-keyframes menu_btn_pop_up {
   0% {
