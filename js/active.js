@@ -1,10 +1,4 @@
-let nav_wrap = document.getElementsByClassName('nav_wrap')[0];
-let nav_btn = document.getElementById('nav_btn');
-let nav_btn_txt = nav_btn.getElementsByClassName('btn_txt')[0];
-let nav_bg = nav_wrap.getElementsByClassName('bg')[0];
-
-let pop_btn_area = document.getElementsByClassName('pop_btn_area')[0];
-let pop_btn = document.getElementsByClassName('pop_btn');
+let header_wrap = document.getElementsByClassName('header_wrap')[0];
 
 // 해상도 분기
 var pc_media = matchMedia("screen and (min-width: 1024px)").matches;
@@ -12,98 +6,40 @@ var check_nav_wrap_is_opened = false;
 
 if (pc_media) {
     // pc 해상도 >= 1024px
-    // nav_btn
-    // - 버튼 호버 시 이벤트
-    nav_btn.addEventListener('mouseover', function(){
-        nav_btn_txt_change(check_nav_wrap_is_opened);
 
-        this.classList.add('is_expanded');
-    });
-    // - 호버 끝날 시 이벤트
-    nav_btn.addEventListener('mouseout', function(){
-        this.classList.remove('is_expanded');
-    });
-    // - 클릭 시 이벤트
-    nav_btn.addEventListener('click', function(){
-        var flag = nav_wrap.classList.contains('is_opened');
-        if (flag) {
-            nav_wrap.classList.remove('is_opened');
-            check_nav_wrap_is_opened = false;
-        } else {
-            nav_wrap.classList.add('is_opened');
-            check_nav_wrap_is_opened = true;
-        }
-    });
 } else {
     // m  해상도 < 1024px
-    // nav_btn
-    var nav_btn_checked_second_click = false;
-    
-    // - 클릭 시 이벤트
-    nav_btn.addEventListener('click', function(){
-        if (nav_btn_checked_second_click) {
-            check_nav_wrap_is_opened = nav_btn_second_click(check_nav_wrap_is_opened);
-            nav_btn_checked_second_click = false;
-        } else {
-            nav_btn_txt_change(check_nav_wrap_is_opened);
-            nav_btn.classList.add('is_expanded');
-            if (!check_nav_wrap_is_opened) {
-                menu_btn_pop_up();
-            }
-            nav_btn_checked_second_click = true;
-        }
-    });
+
 }
 
+// 메뉴 관련
+let menu_btn = header_wrap.getElementsByClassName('menu_btn')[0];
 
-function nav_btn_txt_change(flag) {
-    if (flag) {
-        nav_btn_txt.style.display = 'inline-block';
-        nav_btn_txt.innerHTML = 'CLOSE';
+menu_btn.addEventListener('click', function(){
+    console.log(header_wrap.getAttribute('aria-expanded'))
+    if (header_wrap.getAttribute('aria-expanded') == 'true') {
+        header_wrap.setAttribute('aria-expanded', 'false');
     } else {
-        nav_btn_txt.innerHTML = 'OPEN';
+        header_wrap.setAttribute('aria-expanded', 'true');
     }
-}
-
-function nav_btn_second_click(flag) {
-    if (flag) {
-        nav_wrap.classList.remove('is_opened');
-        setTimeout(function() {
-            nav_btn.classList.remove('is_expanded');
-            nav_btn_txt.innerHTML = 'OPEN';
-        }, 800);
-
-        return flag = false;
-    } else {
-        menu_btn_pop_down()
-        nav_wrap.classList.add('is_opened');
-        setTimeout(function() {
-            nav_btn.classList.remove('is_expanded');
-            nav_btn_txt.innerHTML = 'CLOSE';
-            nav_btn_txt.style.display = 'none'
-            pop_btn_area.style.display = 'none';
-        }, 800);
-
-        return flag = true;
-    }
-}
+});
 
 // 팝 버튼 관련
-function menu_btn_pop_up() {
-    pop_btn_area.style.display = 'block';
-    for (var i = 0; i<pop_btn.length; i++) {
-        var anim_delay = 1.0 + 0.15 * i;
-        pop_btn[i].style['animation'] = "menu_btn_pop_up " + String(anim_delay) + "s ease-in-out forwards";
-    }
-}
+// function menu_btn_pop_up() {
+//     pop_btn_area.style.display = 'block';
+//     for (var i = 0; i<pop_btn.length; i++) {
+//         var anim_delay = 1.0 + 0.15 * i;
+//         pop_btn[i].style['animation'] = "menu_btn_pop_up " + String(anim_delay) + "s ease-in-out forwards";
+//     }
+// }
 
-function menu_btn_pop_down() {
-    for (var i = 0; i<pop_btn.length; i++) {
-        var j = pop_btn.length - i -1;
-        var anim_delay = (0.5 + 0.15 * pop_btn.length) - 0.15 * j;
-        pop_btn[j].style['animation'] = "menu_btn_pop_down " + String(anim_delay) + "s ease-in-out forwards";
-    }
-}
+// function menu_btn_pop_down() {
+//     for (var i = 0; i<pop_btn.length; i++) {
+//         var j = pop_btn.length - i -1;
+//         var anim_delay = (0.5 + 0.15 * pop_btn.length) - 0.15 * j;
+//         pop_btn[j].style['animation'] = "menu_btn_pop_down " + String(anim_delay) + "s ease-in-out forwards";
+//     }
+// }
 
 // 딜레이
 function delay(time) {
@@ -114,22 +50,6 @@ function delay(time) {
     } while (temp - date < time);
 }
 
-// 로그인/회원가입 관련
-let sign_wrap = document.getElementsByClassName('sign_wrap')[0];
-let login_btn = document.getElementById('login_btn');
-
-login_btn.addEventListener('click', function(){
-    show_signform();
-})
-
-function exit_signform() {
-    sign_wrap.classList.remove('is_shown');
-}
-
-function show_signform() {
-    sign_wrap.classList.add('is_shown');
-    // nav_wrap.classList.remove('is_opened');
-}
 
 
 // let header_main_tap = header_main_tap_list.getElementsByClassName('tap_item');

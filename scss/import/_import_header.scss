@@ -2,65 +2,115 @@
 
 .arca {
     .header_wrap {
+        position: relative;
+        top: 0;
+        padding-top: calc(constant(safe-area-inset-top)-50px);
+        padding-top: calc(env(safe-area-inset-top)-50px);
+        left: 0;
+        right: 0;
+        transition: 1s top ease-in;
+        z-index: 10;
+
+        &[aria-expanded="true"] {
+            top: 0;
+            .menu {
+                height: 82px;
+            }
+            .menu_btn {
+                color: transparent;
+                height: 10px;
+            }
+
+            .profile_area {
+                opacity: 0;
+            }
+
+            & + .main_wrap {
+                padding-top: 0;
+            }
+        }
+
+        .menu {
+            height: 0;
+            background-color: #fff;
+            transition: 0.8s height ease-in;
+            z-index: 9;
+        }
+
+        .menu_btn {
+            position: relative;
+            display: block;
+            color: #242424;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            height: 30px;
+            background-color: #eee;
+            box-shadow: 0 0 4px 2px #ddd;
+            transition: 0.8s height ease-in;
+            z-index: 9;
+        }
         
-        // .profile_area {
-        //     padding: 10px;
-        //     background-color: $font-color;
-        //     .thumb_wrap {
-        //         position: relative;
-        //         float: left;
-        //         border-radius: 50%;
-        //         margin-right: 10px;
+        .profile_area {
+            position: fixed;
+            top: 32px;
+            left: 0;
+            right: 0;
+            opacity: 1;
+            transition: 0.8s opacity ease-in;
+            transition-delay: 0.2s;
+            z-index: 5;
 
-        //         &:after {
-        //             content:'';
-        //             @include mask;
-        //             border-radius: 50%;
-        //             border: 1px solid rgba(#000, 0.2);
-        //         }
+            .thumb_wrap {
+                margin: 12px;
+                position: relative;
+                float: left;
+                border-radius: 50%;
 
-        //         .thumb {
-        //             height: 30px;
-        //             width: 30px;
-        //             border-radius: 50%;
-        //         }
-        //     }
+                &:after {
+                    content: '';
+                    @include mask;
+                    border: 1px solid rgba(0,0,0, 0.4);
+                    border-radius: 50%;
+                    background-color: rgba(0,0,0, 0.1);
+                }
+            }
 
-        //     .name {
-        //         @include font(1.6rem, 3rem, 400, $main-color);
-        //     }
+            .info_area {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-top: 5px;
+                line-height: 20px;
+            }
 
-        //     &:after {
-        //         @include clear;
-        //     }
-        // }
+            .sign_out {
+                float: right;
+                color: #222;
+                font-family: Dohyeon;
+                line-height: 28px;
+                font-size: 1.4rem;
+                font-weight: bold;
+                margin-right: 5px;
+            }
 
-        // .main_tap_list {
-        //     display: table;
-        //     table-layout: fixed;
-        //     width: 100%;
-        //     height: 49px;
-        //     background-color: #b5d8be;
-        //     border-bottom: 1px solid $border-color;
-        //     line-height: 5rem;
+            .sticker_area {
+                overflow: auto;
+                white-space: nowrap;
+                background-color: #ccc;
+                margin: 3px 0 2px;
+                line-height: 30px;
+                border-radius: 2px;
 
-        //     .tap_item {
-        //         display: table-cell;
-        //         width: 33.33%;
-        //         text-align: center;
-        //         @include font(1.8rem, 5rem, 200, $border-color);
+                .sticker {
+                    display: inline-block;
+                }
+            }
 
-        //         &[aria-selected=true] {
-        //             background-color: #fff;
-        //             color: $main-color;
-        //             border: 1px solid $main-color;
-        //             box-sizing: border-box;
-        //         }
-
-        //         @include galfol {
-        //             font-size: 1.4rem;
-        //         }
-        //     }
-        // }
+            &:after {
+                @include clear;
+            }
+        }
     }
 }

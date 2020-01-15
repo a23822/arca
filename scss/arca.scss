@@ -7,9 +7,10 @@
 
 .arca {
     position: relative;
-    background-color: #77be75;
+    font-size: 1.6rem;
+    line-height: 2rem;
 
-    .blind_tit {
+    .blind {
         position: absolute;
         top: 0;
         left: 0;
@@ -18,109 +19,6 @@
         overflow: hidden;
     }
 
-    .sign_wrap {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 2s linear;
-
-        &.is_shown {
-            display: block;
-            opacity: 1;
-            z-index: 1000;
-        }
-        
-        .dimmed_layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0, 0.7);
-        }
-
-        .form_wrap {
-            position: relative;
-            top: 50%;
-            width: 80%;
-            margin: 0 auto;
-            transform: translateY(-50%);
-            background-color: transparent;
-            z-index: 1010;
-            padding-top: 30px;
-        }
-
-        .form_inner {
-            padding: 0 30px;
-        }
-
-        .btn_area {
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50px;
-
-            button {
-                width: 33.33%;
-                height: 100%;
-            }
-            
-            button:first-child {
-                border-bottom-left-radius: 10px;
-            }
-
-            button:last-child {
-                border-bottom-right-radius: 10px;
-            }
-
-            .signin_btn {
-                float: left;
-                background-color: #c2e8ce;
-            }
-
-            .signup_btn {
-                float: left;
-                background-color: #77be75;
-            }
-
-            .cancle_btn {
-                display: block;
-                overflow: hidden;
-                background-color: #fa697c;
-            }
-
-            &:after {
-                @include clear;
-            }
-        }
-
-        .form_list {
-            height: 100px;
-            background-color: #fff;
-        }
-
-        .form_item {
-            
-        }
-    }
-
-    @keyframes gradient_fluid {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
 }
 
 @import './import/import_header';

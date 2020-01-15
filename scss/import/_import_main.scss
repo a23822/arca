@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
 .main_wrap {
+    padding-top: 62px;
+    transition: 0.8s padding-top ease-in;
+
     .alliance_name {
         @include font(2rem, 4.8rem, 500, $header_color);
         text-align: center;
