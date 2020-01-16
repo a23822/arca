@@ -9,48 +9,56 @@
 </head>
 <body>
     <div class="arca">
-        <header class="header_wrap" aria-expanded="false">
-            <div class="profile_area">
-                <div class="thumb_wrap">
-                    <img src="./img/sample_profile.png" width="36" height="36" class="thumb"/>
-                </div>
-                <button type="button" class="sign_out"><img src="./svg/ico_sign_out.svg" height="25"/>로그아웃</button>
-                <div class="info_area">
-                    <span class="user_grade" id="user_grade">관리자</span>
-                    <span class="user_aliance" id="user_aliance">Arca</span>
-                    <span class="user_name" id="user_name">아에이오우</span>
-                </div>
-                <div class="sticker_area">
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                    <span class="sticker">a급</span>
-                </div>
-            </div>
-            <ul class="menu">
-                <li class="menu_item">
-                    <img src="img/sample.jpg" width="30" height="30"/>
+        <header class="header_wrap">
+            <span class="menu_btn_wrap">
+                <button type="button" id="menu_btn" aria-pressed="false" class="menu_btn"><img src="./svg/ico_arrow_down.svg" width="20" height="20" class="menu_icon" alt=""/><span>메뉴</span></button>
+            </span>
+        </header>
+        <nav class="nav_wrap" aria-expanded="false">
+            <div class="dimmed_layer"></div>
+            <ul class="menu_list">
+                <li class="item">
+                    <a href="javascipt:void(0)" id="arca_tab" class="item_link">
+                        <div class="thumb">
+                            <img src="./img/sample.jpg" width="36" height="36" alt=""/>
+                        </div>
+                        <div class="info_area">
+
+                        </div>
+                    </a>
                 </li>
-                <li class="menu_item">
-                    <img src="img/sample.jpg" width="30" height="30"/>
+                <li class="item">
+                    <a href="javascipt:void(0)" id="kow_tab" class="item_link">
+                        <div class="thumb">
+                            <img src="./img/sample.jpg" width="36" height="36" alt=""/>
+                        </div>
+                        <div class="info_area">
+
+                        </div>
+                    </a>
                 </li>
-                <li class="menu_item">
-                    <img src="img/sample.jpg" width="30" height="30"/>
+                <li class="item">
+                    <a href="javascipt:void(0)" id="mff_tab" class="item_link">
+                        <div class="thumb">
+                            <img src="./img/sample.jpg" width="36" height="36" alt=""/>
+                        </div>
+                        <div class="info_area">
+
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="javascipt:void(0)" id="setting_tab" class="item_link">
+                        <div class="thumb">
+                            <img src="./img/sample.jpg" width="36" height="36" alt=""/>
+                        </div>
+                        <div class="info_area">
+
+                        </div>
+                    </a>
                 </li>
             </ul>
-            <button type="button" class="menu_btn">메뉴</button>
-        </header>
+        </nav>
         <main class="main_wrap">
             <section class="alliance_wrap" style="display: block;" id="alliance_wrap">
                 콘텐츠

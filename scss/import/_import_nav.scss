@@ -1,3 +1,114 @@
 .arca {
+    .nav_wrap {
+        position: fixed;
+        top: 51px;
+        left: 0px;
+        right: 0px;
+        background-color: #fff;
+        animation: 0.6s nav_contract_ani forwards ease-in;
 
+        &[aria-expanded=true] {
+            animation: 0.6s nav_expand_ani forwards ease-in;
+        }
+
+        .menu_list {
+            .item {
+                display: block;
+
+                & > a {
+                    position: relative;
+                    display: block;
+                    padding: 20px 0 5px;
+                    border-radius: 0 0 20px 20px;   
+
+                    &:after {
+                        @include clear;
+                    }
+
+                    &[id=arca_tab] {
+                        background-color: #f5f9f5;
+                        z-index: 15;
+                    }
+    
+                    &[id=kow_tab] {
+                        background-color: #e3efe3;
+                        top: -20px;
+                        z-index: 14;
+                    }
+    
+                    &[id=mff_tab] {
+                        background-color: #d1e5d1;
+                        top: -40px;
+                        z-index: 13;
+                    }
+    
+                    &[id=setting_tab] {
+                        background-color: #bedbbe;
+                        top: -60px;
+                        z-index: 12;
+                    }
+                }
+
+                &:first-child > a {
+                    padding-top: 0;
+                }
+
+                .thumb {
+                    position: relative;
+                    float: left;
+                    margin: 7px;
+                    border-radius: 50%;
+                    width: 36px;
+                    height: 36px;
+
+                    &:after {
+                        content: '';
+                        @include mask;
+                        border-radius: 50%;
+                        border: 1px solid rgba(0,0,0, 0.3);
+                    }
+
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes nav_expand_ani {
+    0% {
+        top: -174px;
+    }
+    25% {
+        top: -119px;
+    }
+    50% {
+        top: -64px;
+    }
+    75% {
+        top: -9px;
+    }
+    100% {
+        top: 51px;
+    }
+}
+
+@keyframes nav_contract_ani {
+    0% {
+        top: 51px;
+    }
+    25% {
+        top: -9px;
+    }
+    50% {
+        top: -64px;
+    }
+    75% {
+        top: -119px;
+    }
+    100% {
+        top: -174px;
+    }
 }

@@ -12,15 +12,18 @@ if (pc_media) {
 
 }
 
-// 메뉴 관련
-let menu_btn = header_wrap.getElementsByClassName('menu_btn')[0];
+//메뉴 관련
+let menu_btn = document.getElementsByClassName('menu_btn')[0];
+let nav_wrap = document.getElementsByClassName('nav_wrap')[0];
 
+// - 메뉴 펼침 접음
 menu_btn.addEventListener('click', function(){
-    console.log(header_wrap.getAttribute('aria-expanded'))
-    if (header_wrap.getAttribute('aria-expanded') == 'true') {
-        header_wrap.setAttribute('aria-expanded', 'false');
+    if (nav_wrap.getAttribute('aria-expanded') == 'true') {
+        menu_btn.setAttribute('aria-pressed', 'false');
+        nav_wrap.setAttribute('aria-expanded', 'false');
     } else {
-        header_wrap.setAttribute('aria-expanded', 'true');
+        menu_btn.setAttribute('aria-pressed', 'true');
+        nav_wrap.setAttribute('aria-expanded', 'true');
     }
 });
 
