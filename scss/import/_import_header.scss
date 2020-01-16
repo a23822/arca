@@ -25,7 +25,7 @@
             position: relative;
             float: left;
             margin: 8px 0 0 8px;
-            background-color: #fff;
+            background-color: #f5f9f5;
             border-radius: 50%;
             width: 32px;
             height: 32px;
@@ -56,7 +56,7 @@
                     opacity: 0;
                     border-radius: 16px;
                     border: 1px solid rgba($sub-color, 0.5);
-                    background-color: #fff;
+                    background-color: #f5f9f5;
                 }
                 
                 img {
@@ -75,6 +75,27 @@
                         border-radius: 16px 16px 0 0;
                         border-width: 1px 1px 0;
                     }
+                }
+            }
+        }
+
+        .profile_area {
+            position: relative;
+            float: right;
+            margin: 8px 8px 0 0;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba($sub-color, 0.5);
+            border-radius: 50%;
+            
+            .profile_link {
+                display: block;
+
+                &:after {
+                    content: '';
+                    @include mask;
+                    border-radius: 50%;
+                    border: 1px solid rgba(0,0,0, 0.3);
                 }
             }
         }

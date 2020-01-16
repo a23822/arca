@@ -100,7 +100,7 @@ table {
     position: relative;
     float: left;
     margin: 8px 0 0 8px;
-    background-color: #fff;
+    background-color: #f5f9f5;
     -webkit-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
@@ -131,7 +131,7 @@ table {
            -moz-border-radius: 16px;
                 border-radius: 16px;
         border: 1px solid rgba(181, 214, 146, 0.5);
-        background-color: #fff; }
+        background-color: #f5f9f5; }
       .arca .header_wrap .menu_btn_wrap .menu_btn img {
         -webkit-transition: 0.5s -webkit-transform ease-in;
         transition: 0.5s -webkit-transform ease-in;
@@ -151,6 +151,29 @@ table {
            -moz-border-radius: 16px 16px 0 0;
                 border-radius: 16px 16px 0 0;
         border-width: 1px 1px 0; }
+  .arca .header_wrap .profile_area {
+    position: relative;
+    float: right;
+    margin: 8px 8px 0 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(181, 214, 146, 0.5);
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%; }
+    .arca .header_wrap .profile_area .profile_link {
+      display: block; }
+      .arca .header_wrap .profile_area .profile_link:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.3); }
   .arca .header_wrap:after {
     content: '';
     display: block;
@@ -158,17 +181,18 @@ table {
 
 .arca .nav_wrap {
   position: fixed;
-  top: 51px;
+  top: -190px;
   left: 0px;
   right: 0px;
-  background-color: #fff;
-  -webkit-animation: 0.6s nav_contract_ani forwards ease-in;
-     -moz-animation: 0.6s nav_contract_ani forwards ease-in;
-          animation: 0.6s nav_contract_ani forwards ease-in; }
+  background-color: #fff; }
+  .arca .nav_wrap.ani_on {
+    -webkit-animation: 0.6s nav_contract_ani forwards ease-in-out;
+       -moz-animation: 0.6s nav_contract_ani forwards ease-in-out;
+            animation: 0.6s nav_contract_ani forwards ease-in-out; }
   .arca .nav_wrap[aria-expanded=true] {
-    -webkit-animation: 0.6s nav_expand_ani forwards ease-in;
-       -moz-animation: 0.6s nav_expand_ani forwards ease-in;
-            animation: 0.6s nav_expand_ani forwards ease-in; }
+    -webkit-animation: 0.6s nav_expand_ani forwards ease-in-out;
+       -moz-animation: 0.6s nav_expand_ani forwards ease-in-out;
+            animation: 0.6s nav_expand_ani forwards ease-in-out; }
   .arca .nav_wrap .menu_list .item {
     display: block; }
     .arca .nav_wrap .menu_list .item > a {
@@ -218,83 +242,59 @@ table {
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;
                 border-radius: 50%;
-        border: 1px solid rgba(0, 0, 0, 0.3); }
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.4); }
       .arca .nav_wrap .menu_list .item .thumb img {
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;
-                border-radius: 50%; }
+                border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+    .arca .nav_wrap .menu_list .item .info_area {
+      overflow: hidden;
+      line-height: 50px;
+      font-family: Noto-sans-kr; }
 
 @-webkit-keyframes nav_expand_ani {
   0% {
-    top: -174px; }
-  25% {
-    top: -119px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -9px; }
+    top: -190px; }
   100% {
     top: 51px; } }
 
 @-moz-keyframes nav_expand_ani {
   0% {
-    top: -174px; }
-  25% {
-    top: -119px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -9px; }
+    top: -190px; }
   100% {
     top: 51px; } }
 
 @keyframes nav_expand_ani {
   0% {
-    top: -174px; }
-  25% {
-    top: -119px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -9px; }
+    top: -190px; }
   100% {
     top: 51px; } }
 
 @-webkit-keyframes nav_contract_ani {
   0% {
     top: 51px; }
-  25% {
-    top: -9px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -119px; }
   100% {
-    top: -174px; } }
+    top: -190px; } }
 
 @-moz-keyframes nav_contract_ani {
   0% {
     top: 51px; }
-  25% {
-    top: -9px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -119px; }
   100% {
-    top: -174px; } }
+    top: -190px; } }
 
 @keyframes nav_contract_ani {
   0% {
     top: 51px; }
-  25% {
-    top: -9px; }
-  50% {
-    top: -64px; }
-  75% {
-    top: -119px; }
   100% {
-    top: -174px; } }
+    top: -190px; } }
 
 .main_wrap {
   padding-top: 62px;

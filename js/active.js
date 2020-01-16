@@ -18,6 +18,9 @@ let nav_wrap = document.getElementsByClassName('nav_wrap')[0];
 
 // - 메뉴 펼침 접음
 menu_btn.addEventListener('click', function(){
+    if (!nav_wrap.classList.contains('ani_on')) {
+        nav_wrap.classList.add('ani_on');
+    }
     if (nav_wrap.getAttribute('aria-expanded') == 'true') {
         menu_btn.setAttribute('aria-pressed', 'false');
         nav_wrap.setAttribute('aria-expanded', 'false');

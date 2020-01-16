@@ -1,14 +1,17 @@
 .arca {
     .nav_wrap {
         position: fixed;
-        top: 51px;
+        top: -190px;
         left: 0px;
         right: 0px;
         background-color: #fff;
-        animation: 0.6s nav_contract_ani forwards ease-in;
+
+        &.ani_on {
+            animation: 0.6s nav_contract_ani forwards ease-in-out;
+        }
 
         &[aria-expanded=true] {
-            animation: 0.6s nav_expand_ani forwards ease-in;
+            animation: 0.6s nav_expand_ani forwards ease-in-out;
         }
 
         .menu_list {
@@ -66,11 +69,22 @@
                         @include mask;
                         border-radius: 50%;
                         border: 1px solid rgba(0,0,0, 0.3);
+                        background-color: rgba(#fff, 0.4);
                     }
 
                     img {
                         border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
+                }
+
+                .info_area {
+                    overflow: hidden;
+                    line-height: 50px;
+                    font-family: Noto-sans-kr;
                 }
             }
         }
@@ -79,17 +93,9 @@
 
 @keyframes nav_expand_ani {
     0% {
-        top: -174px;
+        top: -190px;
     }
-    25% {
-        top: -119px;
-    }
-    50% {
-        top: -64px;
-    }
-    75% {
-        top: -9px;
-    }
+
     100% {
         top: 51px;
     }
@@ -99,16 +105,8 @@
     0% {
         top: 51px;
     }
-    25% {
-        top: -9px;
-    }
-    50% {
-        top: -64px;
-    }
-    75% {
-        top: -119px;
-    }
+
     100% {
-        top: -174px;
+        top: -190px;
     }
 }
