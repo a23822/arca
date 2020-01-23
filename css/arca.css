@@ -154,16 +154,20 @@ table {
   .arca .header_wrap .profile_area {
     position: relative;
     float: right;
-    margin: 8px 8px 0 0;
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(181, 214, 146, 0.5);
-    -webkit-border-radius: 50%;
-       -moz-border-radius: 50%;
-            border-radius: 50%; }
-    .arca .header_wrap .profile_area .profile_link {
+    height: 100%; }
+    .arca .header_wrap .profile_area .thumb_wrap {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(181, 214, 146, 0.5);
+      -webkit-border-radius: 50%;
+         -moz-border-radius: 50%;
+              border-radius: 50%; }
+    .arca .header_wrap .profile_area .thumb_link {
       display: block; }
-      .arca .header_wrap .profile_area .profile_link:after {
+      .arca .header_wrap .profile_area .thumb_link:after {
         content: '';
         position: absolute;
         top: 0;
@@ -174,6 +178,32 @@ table {
            -moz-border-radius: 50%;
                 border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.3); }
+    .arca .header_wrap .profile_area .sticker_area {
+      overflow: hidden;
+      line-height: 50px;
+      margin-right: 25px; }
+      .arca .header_wrap .profile_area .sticker_area .sticker {
+        margin: 13px 0 0;
+        padding-right: 18px;
+        float: right;
+        height: 24px;
+        -webkit-border-radius: 15px 0 0 15px;
+           -moz-border-radius: 15px 0 0 15px;
+                border-radius: 15px 0 0 15px; }
+        .arca .header_wrap .profile_area .sticker_area .sticker + .sticker {
+          margin-right: -18px; }
+        .arca .header_wrap .profile_area .sticker_area .sticker.type_manager {
+          background-color: yellow; }
+        .arca .header_wrap .profile_area .sticker_area .sticker.type_arca {
+          background-color: red; }
+      .arca .header_wrap .profile_area .sticker_area:after {
+        content: '';
+        display: block;
+        clear: both; }
+    .arca .header_wrap .profile_area:after {
+      content: '';
+      display: block;
+      clear: both; }
   .arca .header_wrap:after {
     content: '';
     display: block;

@@ -82,13 +82,19 @@
         .profile_area {
             position: relative;
             float: right;
-            margin: 8px 8px 0 0;
-            width: 32px;
-            height: 32px;
-            border: 1px solid rgba($sub-color, 0.5);
-            border-radius: 50%;
+            height: 100%;
             
-            .profile_link {
+            .thumb_wrap {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                width: 32px;
+                height: 32px;
+                border: 1px solid rgba($sub-color, 0.5);
+                border-radius: 50%;
+            }
+            
+            .thumb_link {
                 display: block;
 
                 &:after {
@@ -97,6 +103,40 @@
                     border-radius: 50%;
                     border: 1px solid rgba(0,0,0, 0.3);
                 }
+            }
+
+            .sticker_area {
+                overflow: hidden;
+                line-height: 50px;
+                margin-right: 25px;
+    
+                .sticker {
+                    margin: 13px 0 0;
+                    padding-right: 18px;
+                    float: right;
+                    height: 24px;
+                    border-radius: 15px 0 0 15px;
+
+                    & + .sticker {
+                        margin-right: -18px;
+                    }
+
+                    &.type_manager {
+                        background-color: yellow;
+                    }
+
+                    &.type_arca {
+                        background-color: red;
+                    }
+                }
+    
+                &:after {
+                    @include clear;
+                }
+            }
+
+            &:after {
+                @include clear;
             }
         }
         
