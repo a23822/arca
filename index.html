@@ -20,20 +20,24 @@
                     </a>
                 </div>
                 <ul class="sticker_area">
-                    <li class="sticker type_manager">
-                        <span class="body">관리자</span>
+                    <li class="sticker_wrap">
+                        <a href="#" class="sticker type_manager">
+                            <span class="body">관리자</span>
+                        </a>
                     </li>
-                    <li class="sticker type_arca">
-                        <span class="body">AAAA</span>
+                    <li class="sticker_wrap">
+                        <a href="#" class="sticker type_arca">
+                            <span class="body">AAAA</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </header>
-        <nav class="nav_wrap" aria-expanded="false">
+        <nav class="nav_wrap" role="listbox" aria-expanded="false">
             <div class="dimmed_layer"></div>
-            <ul class="menu_list">
-                <li class="item">
-                    <a href="javascipt:void(0)" id="arca_tab" class="item_link">
+            <ul role="tablist" class="menu_list">
+                <li role="option" class="item">
+                    <a href="javascipt:void(0)" id="arca_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
                         </div>
@@ -42,8 +46,8 @@
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="javascipt:void(0)" id="kow_tab" class="item_link">
+                <li role="option" class="item">
+                    <a href="javascipt:void(0)" id="kow_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
                         </div>
@@ -52,8 +56,8 @@
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="javascipt:void(0)" id="mff_tab" class="item_link">
+                <li role="option" class="item">
+                    <a href="javascipt:void(0)" id="mff_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
                         </div>
@@ -62,8 +66,8 @@
                         </div>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="javascipt:void(0)" id="setting_tab" class="item_link">
+                <li role="option" class="item">
+                    <a href="javascipt:void(0)" id="setting_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./svg/ico_setting.svg" width="30" height="30" alt=""/>
                         </div>

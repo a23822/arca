@@ -106,20 +106,25 @@
             }
 
             .sticker_area {
+                float: right;
                 overflow: hidden;
                 line-height: 50px;
                 margin-right: 25px;
+
+                .sticker_wrap {
+                    float: left;
+
+                    &:not(:last-child) {
+                        margin-right: -18px;
+                    }
+                }
     
                 .sticker {
                     margin: 13px 0 0;
-                    padding-right: 18px;
-                    float: right;
+                    padding: 5px 23px 5px 10px;
                     height: 24px;
                     border-radius: 15px 0 0 15px;
-
-                    & + .sticker {
-                        margin-right: -18px;
-                    }
+                    font-size: 1.4rem;
 
                     &.type_manager {
                         background-color: yellow;
@@ -128,10 +133,6 @@
                     &.type_arca {
                         background-color: red;
                     }
-                }
-    
-                &:after {
-                    @include clear;
                 }
             }
 

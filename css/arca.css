@@ -179,27 +179,26 @@ table {
                 border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.3); }
     .arca .header_wrap .profile_area .sticker_area {
+      float: right;
       overflow: hidden;
       line-height: 50px;
       margin-right: 25px; }
+      .arca .header_wrap .profile_area .sticker_area .sticker_wrap {
+        float: left; }
+        .arca .header_wrap .profile_area .sticker_area .sticker_wrap:not(:last-child) {
+          margin-right: -18px; }
       .arca .header_wrap .profile_area .sticker_area .sticker {
         margin: 13px 0 0;
-        padding-right: 18px;
-        float: right;
+        padding: 5px 23px 5px 10px;
         height: 24px;
         -webkit-border-radius: 15px 0 0 15px;
            -moz-border-radius: 15px 0 0 15px;
-                border-radius: 15px 0 0 15px; }
-        .arca .header_wrap .profile_area .sticker_area .sticker + .sticker {
-          margin-right: -18px; }
+                border-radius: 15px 0 0 15px;
+        font-size: 1.4rem; }
         .arca .header_wrap .profile_area .sticker_area .sticker.type_manager {
           background-color: yellow; }
         .arca .header_wrap .profile_area .sticker_area .sticker.type_arca {
           background-color: red; }
-      .arca .header_wrap .profile_area .sticker_area:after {
-        content: '';
-        display: block;
-        clear: both; }
     .arca .header_wrap .profile_area:after {
       content: '';
       display: block;
