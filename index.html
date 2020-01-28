@@ -15,7 +15,7 @@
             </div>
             <div class="profile_area">
                 <div class="thumb_wrap">
-                    <a href="javascript:void(0)" class="thumb_link">
+                    <a href="javascript:void(0)" role="button" aria-pressed="false" class="thumb_btn">
                         <img src="./img/sample_profile.png" width="32" height="32" alt=""/>
                     </a>
                 </div>
@@ -31,12 +31,17 @@
                         </a>
                     </li>
                 </ul>
+                <div class="profile_layer" style="display: none;">
+                    <div class="back_btn_wrap">
+                        <button type="button" aria-pressed="false" class="back_btn"><img src="./svg/ico_redo.svg" class="ico_redo" width="24" height="24" alt="되돌리기"/></button>
+                    </div>
+                </div>
             </div>
         </header>
         <nav class="nav_wrap" role="listbox" aria-expanded="false">
             <div class="dimmed_layer"></div>
             <ul role="tablist" class="menu_list">
-                <li role="option" class="item">
+                <li role="presentation" class="item">
                     <a href="javascipt:void(0)" id="arca_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
@@ -46,7 +51,7 @@
                         </div>
                     </a>
                 </li>
-                <li role="option" class="item">
+                <li role="presentation" class="item">
                     <a href="javascipt:void(0)" id="kow_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
@@ -56,7 +61,7 @@
                         </div>
                     </a>
                 </li>
-                <li role="option" class="item">
+                <li role="presentation" class="item">
                     <a href="javascipt:void(0)" id="mff_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./img/sample.jpg" width="36" height="36" alt=""/>
@@ -66,7 +71,7 @@
                         </div>
                     </a>
                 </li>
-                <li role="option" class="item">
+                <li role="presentation" class="item">
                     <a href="javascipt:void(0)" id="setting_tab" role="tab" aria-selected="false" class="item_link">
                         <div class="thumb">
                             <img src="./svg/ico_setting.svg" width="30" height="30" alt=""/>

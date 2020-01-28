@@ -94,14 +94,58 @@
                 border-radius: 50%;
             }
             
-            .thumb_link {
+            .thumb_btn {
                 display: block;
+                transition: all 0.8s ease-in;
+                opacity: 1;
+                transform: rotate(0);
+
+                &[aria-pressed=true] {
+                    transform: rotate(180deg);
+                    opacity: 0;
+
+                    &:after {
+                        content: none;
+                    }
+                }
 
                 &:after {
                     content: '';
                     @include mask;
                     border-radius: 50%;
                     border: 1px solid rgba(0,0,0, 0.3);
+                }
+            }
+
+            .profile_layer {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                width: 100px;
+                height: 100px;
+                background-color: #fff;
+                border-radius: 17px;
+                z-index: 101;
+
+                .back_btn_wrap {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 32px;
+                    height: 32px;
+                    border: 1px solid rgba($sub-color, 0.5);
+                    border-radius: 50%;
+
+                    .back_btn {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        .ico_redo {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
             }
 

@@ -165,9 +165,25 @@ table {
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
               border-radius: 50%; }
-    .arca .header_wrap .profile_area .thumb_link {
-      display: block; }
-      .arca .header_wrap .profile_area .thumb_link:after {
+    .arca .header_wrap .profile_area .thumb_btn {
+      display: block;
+      -webkit-transition: all 0.8s ease-in;
+      -moz-transition: all 0.8s ease-in;
+      transition: all 0.8s ease-in;
+      opacity: 1;
+      -webkit-transform: rotate(0);
+         -moz-transform: rotate(0);
+          -ms-transform: rotate(0);
+              transform: rotate(0); }
+      .arca .header_wrap .profile_area .thumb_btn[aria-pressed=true] {
+        -webkit-transform: rotate(180deg);
+           -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+        opacity: 0; }
+        .arca .header_wrap .profile_area .thumb_btn[aria-pressed=true]:after {
+          content: none; }
+      .arca .header_wrap .profile_area .thumb_btn:after {
         content: '';
         position: absolute;
         top: 0;
@@ -178,6 +194,40 @@ table {
            -moz-border-radius: 50%;
                 border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.3); }
+    .arca .header_wrap .profile_area .profile_layer {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      -webkit-border-radius: 17px;
+         -moz-border-radius: 17px;
+              border-radius: 17px;
+      z-index: 101; }
+      .arca .header_wrap .profile_area .profile_layer .back_btn_wrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(181, 214, 146, 0.5);
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%; }
+        .arca .header_wrap .profile_area .profile_layer .back_btn_wrap .back_btn {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+             -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%); }
+          .arca .header_wrap .profile_area .profile_layer .back_btn_wrap .back_btn .ico_redo {
+            -webkit-transform: rotate(180deg);
+               -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                    transform: rotate(180deg); }
     .arca .header_wrap .profile_area .sticker_area {
       float: right;
       overflow: hidden;

@@ -30,6 +30,24 @@ menu_btn.addEventListener('click', function(){
     }
 });
 
+// 메뉴 프로필 관련
+let profile_area = header_wrap.getElementsByClassName('profile_area')[0];
+let thumb_btn = profile_area.getElementsByClassName('thumb_btn')[0];
+let profile_layer = profile_area.getElementsByClassName('profile_layer')[0];
+
+
+thumb_btn.addEventListener('click', function(){
+    if (thumb_btn.getAttribute('aria-pressed') == 'true') {
+        thumb_btn.setAttribute('aria-pressed', 'false');
+        profile_layer.style.display = 'none';
+    } else {
+        thumb_btn.setAttribute('aria-pressed', 'true');
+        profile_layer.style.display = 'block';
+    }
+});
+
+
+
 // 팝 버튼 관련
 // function menu_btn_pop_up() {
 //     pop_btn_area.style.display = 'block';
