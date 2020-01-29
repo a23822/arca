@@ -56,7 +56,7 @@ table {
   border-spacing: 0; }
 
 @font-face {
-  font-family: DoHyeon;
+  font-family: Dohyeon;
   src: url("../../fonts/Do_Hyeon/DoHyeon-Regular.ttf") format("truetype"); }
 
 @font-face {
@@ -64,13 +64,14 @@ table {
   src: url("../../fonts/Jua/Jua-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: Noto-sans-kr;
+  font-family: notosanskr;
   src: url("../../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf") format("opentype"); }
 
 .arca {
   position: relative;
   font-size: 1.6rem;
-  line-height: 2rem; }
+  line-height: 2rem;
+  font-family: notosanskr; }
   .arca .blind {
     position: absolute;
     top: 0;
@@ -111,7 +112,6 @@ table {
       position: absolute;
       top: 0;
       left: 0;
-      padding-left: 6px;
       width: 100%;
       height: 100%;
       color: transparent;
@@ -164,7 +164,8 @@ table {
       border: 1px solid rgba(181, 214, 146, 0.5);
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
-              border-radius: 50%; }
+              border-radius: 50%;
+      z-index: 102; }
     .arca .header_wrap .profile_area .thumb_btn {
       display: block;
       -webkit-transition: all 0.8s ease-in;
@@ -198,13 +199,39 @@ table {
       position: absolute;
       top: 8px;
       right: 8px;
-      width: 100px;
-      height: 100px;
+      width: 169px;
+      height: auto;
       background-color: #fff;
       -webkit-border-radius: 17px;
          -moz-border-radius: 17px;
               border-radius: 17px;
-      z-index: 101; }
+      z-index: 101;
+      opacity: 0;
+      -webkit-transition: all 0.8s ease-in;
+      -moz-transition: all 0.8s ease-in;
+      transition: all 0.8s ease-in; }
+      .arca .header_wrap .profile_area .profile_layer.show {
+        z-index: 103;
+        opacity: 1; }
+        .arca .header_wrap .profile_area .profile_layer.show .back_btn_wrap .back_btn .ico_redo {
+          -webkit-transform: rotate(0deg);
+             -moz-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+                  transform: rotate(0deg); }
+        .arca .header_wrap .profile_area .profile_layer.show:before {
+          content: '';
+          position: absolute;
+          top: 42px;
+          left: -1.5px;
+          right: -1.5px;
+          bottom: -1.5px;
+          background-color: transparent;
+          border: 1px solid rgba(181, 214, 146, 0.5);
+          border-width: 0 1.5px 1.5px;
+          -webkit-border-radius: 0 0 17px 17px;
+             -moz-border-radius: 0 0 17px 17px;
+                  border-radius: 0 0 17px 17px;
+          z-index: 100; }
       .arca .header_wrap .profile_area .profile_layer .back_btn_wrap {
         position: absolute;
         top: 0;
@@ -227,7 +254,47 @@ table {
             -webkit-transform: rotate(180deg);
                -moz-transform: rotate(180deg);
                 -ms-transform: rotate(180deg);
-                    transform: rotate(180deg); }
+                    transform: rotate(180deg);
+            -webkit-transition: -webkit-transform 0.8s ease-in;
+            transition: -webkit-transform 0.8s ease-in;
+            -moz-transition: transform 0.8s ease-in, -moz-transform 0.8s ease-in;
+            transition: transform 0.8s ease-in;
+            transition: transform 0.8s ease-in, -webkit-transform 0.8s ease-in, -moz-transform 0.8s ease-in; }
+      .arca .header_wrap .profile_area .profile_layer .name_area {
+        float: left;
+        font-size: 1.3rem;
+        line-height: 34px;
+        padding: 0 40px 0 12px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+        .arca .header_wrap .profile_area .profile_layer .name_area .label {
+          font-size: 1.1rem; }
+          .arca .header_wrap .profile_area .profile_layer .name_area .label.type_manager {
+            color: red;
+            font-weight: bold; }
+          .arca .header_wrap .profile_area .profile_layer .name_area .label.type_arca {
+            color: blue;
+            font-weight: bold; }
+        .arca .header_wrap .profile_area .profile_layer .name_area .username {
+          float: right;
+          font-weight: bold;
+          margin-left: 4px; }
+      .arca .header_wrap .profile_area .profile_layer .info_area {
+        position: relative;
+        clear: both;
+        padding: 12px;
+        z-index: 105; }
+        .arca .header_wrap .profile_area .profile_layer .info_area .btn_wrap .btn_sign_out {
+          float: right;
+          line-height: 24px; }
+        .arca .header_wrap .profile_area .profile_layer .info_area .btn_wrap .ico_sign_out {
+          float: left;
+          margin: 0 4px; }
+        .arca .header_wrap .profile_area .profile_layer .info_area .btn_wrap:after {
+          content: '';
+          display: block;
+          clear: both; }
     .arca .header_wrap .profile_area .sticker_area {
       float: right;
       overflow: hidden;
@@ -277,7 +344,7 @@ table {
     .arca .nav_wrap .menu_list .item > a {
       position: relative;
       display: block;
-      padding: 20px 0 5px;
+      padding-top: 20px;
       -webkit-border-radius: 0 0 20px 20px;
          -moz-border-radius: 0 0 20px 20px;
               border-radius: 0 0 20px 20px; }

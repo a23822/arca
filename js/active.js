@@ -34,18 +34,31 @@ menu_btn.addEventListener('click', function(){
 let profile_area = header_wrap.getElementsByClassName('profile_area')[0];
 let thumb_btn = profile_area.getElementsByClassName('thumb_btn')[0];
 let profile_layer = profile_area.getElementsByClassName('profile_layer')[0];
+let profile_back_btn = profile_layer.getElementsByClassName('back_btn')[0];
 
 
 thumb_btn.addEventListener('click', function(){
-    if (thumb_btn.getAttribute('aria-pressed') == 'true') {
-        thumb_btn.setAttribute('aria-pressed', 'false');
-        profile_layer.style.display = 'none';
-    } else {
+    if (thumb_btn.getAttribute('aria-pressed') == 'false') {
         thumb_btn.setAttribute('aria-pressed', 'true');
-        profile_layer.style.display = 'block';
+        profile_layer.classList.add('show');
+        profile_back_btn.setAttribute('aria-pressed', 'false');
     }
 });
 
+profile_back_btn.addEventListener('click', function(){
+    if (profile_back_btn.getAttribute('aria-pressed') == 'false') {
+        profile_back_btn.setAttribute('aria-pressed', 'true');
+        profile_layer.classList.remove('show');
+        thumb_btn.setAttribute('aria-pressed', 'false');
+    }
+});
+
+// 로그아웃 관련
+let btn_sign_out = profile_layer.getElementsByClassName('btn_sign_out')[0];
+
+btn_sign_out.addEventListener('click', function(){
+    btn_sign_out.setAttribute('aria-pressed', 'true');
+});
 
 
 // 팝 버튼 관련
