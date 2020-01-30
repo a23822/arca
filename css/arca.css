@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 10px;
   line-height: 10px; }
@@ -64,14 +65,14 @@ table {
   src: url("../../fonts/Jua/Jua-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: notosanskr;
+  font-family: noto;
   src: url("../../fonts/Noto_Sans_KR/NotoSansKR-Regular.otf") format("opentype"); }
 
 .arca {
   position: relative;
   font-size: 1.6rem;
   line-height: 2rem;
-  font-family: notosanskr; }
+  font-family: noto; }
   .arca .blind {
     position: absolute;
     top: 0;
@@ -161,13 +162,40 @@ table {
       right: 8px;
       width: 32px;
       height: 32px;
+      background-color: #fff;
       border: 1px solid rgba(181, 214, 146, 0.5);
       -webkit-border-radius: 50%;
          -moz-border-radius: 50%;
               border-radius: 50%;
       z-index: 102; }
+      .arca .header_wrap .profile_area .thumb_wrap:before {
+        content: '로그인';
+        display: block;
+        position: absolute;
+        top: 4px;
+        bottom: 4px;
+        padding-left: 12px;
+        width: 50px;
+        right: 15px;
+        background-color: #fff;
+        font-size: 12px;
+        line-height: 24px;
+        font-family: jua;
+        -webkit-border-radius: 12px 0 0 12px;
+           -moz-border-radius: 12px 0 0 12px;
+                border-radius: 12px 0 0 12px;
+        border: 1px solid rgba(181, 214, 146, 0.5); }
+      .arca .header_wrap .profile_area .thumb_wrap.is_login:before {
+        content: 'none';
+        display: none; }
+      .arca .header_wrap .profile_area .thumb_wrap.is_login .thumb_btn {
+        display: block; }
+      .arca .header_wrap .profile_area .thumb_wrap.is_login + .sticker_area {
+        display: block; }
+      .arca .header_wrap .profile_area .thumb_wrap.is_login .btn_sign_in {
+        display: none; }
     .arca .header_wrap .profile_area .thumb_btn {
-      display: block;
+      display: none;
       -webkit-transition: all 0.8s ease-in;
       -moz-transition: all 0.8s ease-in;
       transition: all 0.8s ease-in;
@@ -195,6 +223,25 @@ table {
            -moz-border-radius: 50%;
                 border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.3); }
+    .arca .header_wrap .profile_area .btn_sign_in {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 32px;
+      background-color: #fff;
+      -webkit-border-radius: 50%;
+         -moz-border-radius: 50%;
+              border-radius: 50%;
+      z-index: 104; }
+      .arca .header_wrap .profile_area .btn_sign_in .ico_sign_in {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
     .arca .header_wrap .profile_area .profile_layer {
       position: absolute;
       top: 8px;
@@ -296,6 +343,7 @@ table {
           display: block;
           clear: both; }
     .arca .header_wrap .profile_area .sticker_area {
+      display: none;
       float: right;
       overflow: hidden;
       line-height: 50px;
@@ -327,7 +375,7 @@ table {
 
 .arca .nav_wrap {
   position: fixed;
-  top: -190px;
+  top: -210px;
   left: 0px;
   right: 0px;
   background-color: #fff; }
@@ -408,19 +456,19 @@ table {
 
 @-webkit-keyframes nav_expand_ani {
   0% {
-    top: -190px; }
+    top: -210px; }
   100% {
     top: 51px; } }
 
 @-moz-keyframes nav_expand_ani {
   0% {
-    top: -190px; }
+    top: -210px; }
   100% {
     top: 51px; } }
 
 @keyframes nav_expand_ani {
   0% {
-    top: -190px; }
+    top: -210px; }
   100% {
     top: 51px; } }
 
@@ -428,22 +476,22 @@ table {
   0% {
     top: 51px; }
   100% {
-    top: -190px; } }
+    top: -210px; } }
 
 @-moz-keyframes nav_contract_ani {
   0% {
     top: 51px; }
   100% {
-    top: -190px; } }
+    top: -210px; } }
 
 @keyframes nav_contract_ani {
   0% {
     top: 51px; }
   100% {
-    top: -190px; } }
+    top: -210px; } }
 
 .main_wrap {
-  padding-top: 62px;
+  padding-top: 50px;
   -webkit-transition: 0.8s padding-top ease-in;
   -moz-transition: 0.8s padding-top ease-in;
   transition: 0.8s padding-top ease-in; }
@@ -635,3 +683,69 @@ table {
     margin-left: 5px;
     color: #a3cca3;
     opacity: 1; } }
+
+.arca .sign_layer {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 700; }
+
+.arca .form_wrap {
+  background-color: #fff; }
+
+.arca .sign_select_wrap .select_scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  letter-spacing: -0.3px; }
+
+.arca .sign_select_wrap .method_wrap {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0 10px 10px; }
+  .arca .sign_select_wrap .method_wrap:first-child {
+    margin-left: 24px; }
+  .arca .sign_select_wrap .method_wrap:last-child {
+    margin-right: 24px; }
+  .arca .sign_select_wrap .method_wrap .method {
+    position: relative;
+    vertical-align: top;
+    width: 68px;
+    height: 68px;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.5); }
+
+.arca .ico_web_google {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-transform: scale(0.5);
+     -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url(../img/sprite.png);
+  background-position: -64px 0px;
+  width: 64px;
+  height: 64px; }
+
+.arca .ico_web_facebook {
+  display: inline-block;
+  vertical-align: top;
+  -webkit-transform: scale(0.5);
+     -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 64px;
+  height: 64px; }

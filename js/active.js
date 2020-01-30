@@ -32,6 +32,7 @@ menu_btn.addEventListener('click', function(){
 
 // 메뉴 프로필 관련
 let profile_area = header_wrap.getElementsByClassName('profile_area')[0];
+let thumb_wrap = profile_area.getElementsByClassName('thumb_wrap')[0];
 let thumb_btn = profile_area.getElementsByClassName('thumb_btn')[0];
 let profile_layer = profile_area.getElementsByClassName('profile_layer')[0];
 let profile_back_btn = profile_layer.getElementsByClassName('back_btn')[0];
@@ -53,11 +54,22 @@ profile_back_btn.addEventListener('click', function(){
     }
 });
 
+// 로그인 관련
+let btn_sign_in = profile_area.getElementsByClassName('btn_sign_in')[0];
+
+btn_sign_in.addEventListener('click', function(){
+    btn_sign_in.setAttribute('aria-pressed', 'true');
+    thumb_wrap.classList.add('is_login');
+});
+
 // 로그아웃 관련
 let btn_sign_out = profile_layer.getElementsByClassName('btn_sign_out')[0];
 
 btn_sign_out.addEventListener('click', function(){
     btn_sign_out.setAttribute('aria-pressed', 'true');
+    thumb_wrap.classList.remove('is_login');
+    profile_layer.classList.remove('show');
+    thumb_btn.setAttribute('aria-pressed', 'false');
 });
 
 

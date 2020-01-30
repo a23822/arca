@@ -89,13 +89,50 @@
                 right: 8px;
                 width: 32px;
                 height: 32px;
+                background-color: #fff;
                 border: 1px solid rgba($sub-color, 0.5);
                 border-radius: 50%;
                 z-index: 102;
+
+                &:before {
+                    content:'로그인';
+                    display: block;
+                    position: absolute;
+                    top: 4px;
+                    bottom: 4px;
+                    padding-left: 12px;
+                    width: 50px;
+                    right: 15px;
+                    background-color: #fff;
+                    font-size: 12px;
+                    line-height: 24px;
+                    font-family: jua;
+                    border-radius: 12px 0 0 12px;
+                    border: 1px solid rgba($sub-color, 0.5);
+                }
+
+                &.is_login {
+                    &:before {
+                        content: 'none';
+                        display: none;
+                    }
+
+                    .thumb_btn {
+                        display: block;
+                    }
+
+                    & + .sticker_area {
+                        display: block;
+                    }
+
+                    .btn_sign_in {
+                        display: none;
+                    }
+                }
             }
             
             .thumb_btn {
-                display: block;
+                display: none;
                 transition: all 0.8s ease-in;
                 opacity: 1;
                 transform: rotate(0);
@@ -114,6 +151,24 @@
                     @include mask;
                     border-radius: 50%;
                     border: 1px solid rgba(0,0,0, 0.3);
+                }
+            }
+
+            .btn_sign_in {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 32px;
+                background-color: #fff;
+                border-radius: 50%;
+                z-index: 104;
+
+                .ico_sign_in {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
 
@@ -233,6 +288,7 @@
             }
 
             .sticker_area {
+                display: none;
                 float: right;
                 overflow: hidden;
                 line-height: 50px;

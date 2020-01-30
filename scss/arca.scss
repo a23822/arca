@@ -4,12 +4,13 @@
 @import './common/variables';
 @import './common/reset.scss';
 @import './common/fonts';
+@import './sprite';
 
 .arca {
     position: relative;
     font-size: 1.6rem;
     line-height: 2rem;
-    font-family: notosanskr;
+    font-family: noto;
 
     .blind {
         position: absolute;
@@ -26,6 +27,7 @@
 @import './import/import_nav';
 @import './import/import_main';
 @import './import/import_footer';
+@import './import/import_sign';
 
 
 

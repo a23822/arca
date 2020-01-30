@@ -9,22 +9,44 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$man-listening-music-with-headphone-name: 'man-Listening-music with-headphone';
-$man-listening-music-with-headphone-x: 0px;
-$man-listening-music-with-headphone-y: 0px;
-$man-listening-music-with-headphone-offset-x: 0px;
-$man-listening-music-with-headphone-offset-y: 0px;
-$man-listening-music-with-headphone-width: 1400px;
-$man-listening-music-with-headphone-height: 1472px;
-$man-listening-music-with-headphone-total-width: 1400px;
-$man-listening-music-with-headphone-total-height: 1472px;
-$man-listening-music-with-headphone-image: '../img/sprite.png';
-$man-listening-music-with-headphone: (0px, 0px, 0px, 0px, 1400px, 1472px, 1400px, 1472px, '../img/sprite.png', 'man-Listening-music with-headphone', );
-$spritesheet-width: 1400px;
-$spritesheet-height: 1472px;
+$ico-arcadia-name: 'ico_arcadia';
+$ico-arcadia-x: 0px;
+$ico-arcadia-y: 64px;
+$ico-arcadia-offset-x: 0px;
+$ico-arcadia-offset-y: -64px;
+$ico-arcadia-width: 70px;
+$ico-arcadia-height: 35px;
+$ico-arcadia-total-width: 128px;
+$ico-arcadia-total-height: 99px;
+$ico-arcadia-image: '../img/sprite.png';
+$ico-arcadia: (0px, 64px, 0px, -64px, 70px, 35px, 128px, 99px, '../img/sprite.png', 'ico_arcadia', );
+$ico-web-facebook-name: 'ico_web_facebook';
+$ico-web-facebook-x: 0px;
+$ico-web-facebook-y: 0px;
+$ico-web-facebook-offset-x: 0px;
+$ico-web-facebook-offset-y: 0px;
+$ico-web-facebook-width: 64px;
+$ico-web-facebook-height: 64px;
+$ico-web-facebook-total-width: 128px;
+$ico-web-facebook-total-height: 99px;
+$ico-web-facebook-image: '../img/sprite.png';
+$ico-web-facebook: (0px, 0px, 0px, 0px, 64px, 64px, 128px, 99px, '../img/sprite.png', 'ico_web_facebook', );
+$ico-web-google-name: 'ico_web_google';
+$ico-web-google-x: 64px;
+$ico-web-google-y: 0px;
+$ico-web-google-offset-x: -64px;
+$ico-web-google-offset-y: 0px;
+$ico-web-google-width: 64px;
+$ico-web-google-height: 64px;
+$ico-web-google-total-width: 128px;
+$ico-web-google-total-height: 99px;
+$ico-web-google-image: '../img/sprite.png';
+$ico-web-google: (64px, 0px, -64px, 0px, 64px, 64px, 128px, 99px, '../img/sprite.png', 'ico_web_google', );
+$spritesheet-width: 128px;
+$spritesheet-height: 99px;
 $spritesheet-image: '../img/sprite.png';
-$spritesheet-sprites: ($man-listening-music-with-headphone, );
-$spritesheet: (1400px, 1472px, '../img/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($ico-arcadia, $ico-web-facebook, $ico-web-google, );
+$spritesheet: (128px, 99px, '../img/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
@@ -70,6 +92,12 @@ $spritesheet: (1400px, 1472px, '../img/sprite.png', $spritesheet-sprites, );
 }
 
 @mixin sprite($sprite) {
+  display: inline-block;
+  vertical-align: top;
+  transform: scale(0.5);
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
   @include sprite-image($sprite);
   @include sprite-position($sprite);
   @include sprite-width($sprite);

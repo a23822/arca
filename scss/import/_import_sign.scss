@@ -1,0 +1,56 @@
+.arca {
+    .sign_layer {
+        display: block;
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color: rgba(0,0,0, 0.6);
+        z-index: 700;
+    }
+
+    .form_wrap {
+        background-color: #fff;
+    }
+
+    .sign_select_wrap {
+        .select_scroll {
+            white-space: nowrap;
+            overflow-x: auto;
+            letter-spacing: -0.3px;
+        }
+
+        .method_wrap {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px 0 10px 10px;
+            
+
+            &:first-child {
+                margin-left: 24px;
+            }
+
+            &:last-child {
+                margin-right: 24px;
+            }
+
+            .method {
+                position: relative;
+                vertical-align: top;
+                width: 68px;
+                height: 68px;
+                border-radius: 50%;
+                border: 1px solid rgba(0,0,0, 0.5);
+            }
+        }
+    }
+
+    .ico_web_google {
+        @include sprite($ico_web_google);
+    }
+
+    .ico_web_facebook {
+        @include sprite($ico_web_facebook);
+    }
+}
