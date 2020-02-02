@@ -693,40 +693,136 @@ table {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 700; }
-
-.arca .form_wrap {
-  background-color: #fff; }
-
-.arca .sign_select_wrap .select_scroll {
-  white-space: nowrap;
-  overflow-x: auto;
-  letter-spacing: -0.3px; }
-
-.arca .sign_select_wrap .method_wrap {
-  display: inline-block;
-  vertical-align: top;
-  margin: 10px 0 10px 10px; }
-  .arca .sign_select_wrap .method_wrap:first-child {
-    margin-left: 24px; }
-  .arca .sign_select_wrap .method_wrap:last-child {
-    margin-right: 24px; }
-  .arca .sign_select_wrap .method_wrap .method {
-    position: relative;
-    vertical-align: top;
-    width: 68px;
-    height: 68px;
-    -webkit-border-radius: 50%;
-       -moz-border-radius: 50%;
-            border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.5); }
+  .arca .sign_layer .card_wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    text-align: center;
+    height: 70%;
+    white-space: nowrap;
+    overflow-x: auto; }
+    .arca .sign_layer .card_wrap .card {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      overflow: hidden;
+      width: 70%;
+      height: 100%;
+      -webkit-border-radius: 8px;
+         -moz-border-radius: 8px;
+              border-radius: 8px;
+      background-color: #fff; }
+      .arca .sign_layer .card_wrap .card:first-child {
+        margin-left: 15%; }
+      .arca .sign_layer .card_wrap .card:last-child {
+        margin-right: 15%; }
+      .arca .sign_layer .card_wrap .card .open_btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #a3cca3;
+        color: #fff; }
+      .arca .sign_layer .card_wrap .card .ico_area {
+        position: relative;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+           -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        text-align: center; }
+        .arca .sign_layer .card_wrap .card .ico_area .ico_wrap {
+          position: relative;
+          display: inline-block;
+          vertical-align: top;
+          width: 118px;
+          height: 118px;
+          background-color: #fff;
+          border: 5px solid rgba(163, 204, 163, 0.5);
+          -webkit-border-radius: 50%;
+             -moz-border-radius: 50%;
+                  border-radius: 50%; }
+          @media (max-width: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .ico_wrap {
+              width: 90px;
+              height: 90px;
+              border-width: 3px; } }
+          @media (max-height: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .ico_wrap {
+              width: 90px;
+              height: 90px;
+              border-width: 3px; } }
+        .arca .sign_layer .card_wrap .card .ico_area .ico_method {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+             -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          width: 64px;
+          height: 64px; }
+          @media (max-width: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .ico_method {
+              -webkit-transform: translate(-50%, -50%) scale(0.66);
+                 -moz-transform: translate(-50%, -50%) scale(0.66);
+                  -ms-transform: translate(-50%, -50%) scale(0.66);
+                      transform: translate(-50%, -50%) scale(0.66); } }
+          @media (max-height: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .ico_method {
+              -webkit-transform: translate(-50%, -50%) scale(0.66);
+                 -moz-transform: translate(-50%, -50%) scale(0.66);
+                  -ms-transform: translate(-50%, -50%) scale(0.66);
+                      transform: translate(-50%, -50%) scale(0.66); } }
+        .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+          margin-top: 18px;
+          font-size: 2.4rem;
+          line-height: 1.2;
+          font-weight: bold;
+          font-family: Dohyeon; }
+          @media (max-width: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              position: absolute;
+              top: 0;
+              left: 0;
+              color: transparent;
+              overflow: hidden;
+              white-space: nowrap; } }
+          @media (max-height: 319px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              position: absolute;
+              top: 0;
+              left: 0;
+              color: transparent;
+              overflow: hidden;
+              white-space: nowrap; } }
+          @media (min-width: 768px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              margin-top: 24px;
+              font-size: 3rem; } }
+          @media (min-height: 768px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              margin-top: 24px;
+              font-size: 3rem; } }
+          @media (min-width: 1024px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              font-size: 3.6rem; } }
+          @media (min-width: 1024px) {
+            .arca .sign_layer .card_wrap .card .ico_area .card_tit {
+              font-size: 3.6rem; } }
 
 .arca .ico_web_google {
   display: inline-block;
   vertical-align: top;
-  -webkit-transform: scale(0.5);
-     -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-          transform: scale(0.5);
   color: transparent;
   white-space: nowrap;
   overflow: hidden;
@@ -738,10 +834,6 @@ table {
 .arca .ico_web_facebook {
   display: inline-block;
   vertical-align: top;
-  -webkit-transform: scale(0.5);
-     -moz-transform: scale(0.5);
-      -ms-transform: scale(0.5);
-          transform: scale(0.5);
   color: transparent;
   white-space: nowrap;
   overflow: hidden;
