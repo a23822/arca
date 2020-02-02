@@ -8,40 +8,115 @@
         bottom:0;
         background-color: rgba(0,0,0, 0.6);
         z-index: 700;
-    }
 
-    .form_wrap {
-        background-color: #fff;
-    }
-
-    .sign_select_wrap {
-        .select_scroll {
+        .card_wrap {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            text-align: center;
+            height: 70%;
             white-space: nowrap;
             overflow-x: auto;
-            letter-spacing: -0.3px;
-        }
-
-        .method_wrap {
-            display: inline-block;
-            vertical-align: top;
-            margin: 10px 0 10px 10px;
             
-
-            &:first-child {
-                margin-left: 24px;
-            }
-
-            &:last-child {
-                margin-right: 24px;
-            }
-
-            .method {
+            .card {
                 position: relative;
+                display: inline-block;
                 vertical-align: top;
-                width: 68px;
-                height: 68px;
-                border-radius: 50%;
-                border: 1px solid rgba(0,0,0, 0.5);
+                margin-left: 20px;
+                overflow: hidden;
+                width: 70%;
+                height: 100%;
+                border-radius: 8px;
+                background-color: #fff;
+
+                &:first-child {
+                    margin-left: 15%;
+                }
+
+                &:last-child {
+                    margin-right: 15%;
+                }
+
+                .open_btn {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: $main-color;
+                    color: #fff;
+
+                    &[aria-selected="true"] {
+                        
+                    }
+                }
+
+                .ico_area {
+                    position: relative;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    transform: translateY(-50%);
+                    text-align: center;
+
+                    .ico_wrap {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 118px;
+                        height: 118px;
+                        background-color: #fff;
+                        border: 5px solid rgba($main-color, 0.5);
+                        border-radius: 50%;
+
+                        @include galfol {
+                            width: 90px;
+                            height: 90px;
+                            border-width: 3px;
+                        }
+                    }
+
+                    .ico_method {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 64px;
+                        height: 64px;
+                    
+                        @include galfol {
+                            transform: translate(-50%, -50%) scale(0.66);
+                        }
+                    }
+
+                    .card_tit {
+                        margin-top: 18px;
+                        font-size: 2.4rem;
+                        line-height: 1.2;
+                        font-weight: bold;
+                        font-family: Dohyeon;
+
+                        @include galfol {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            color: transparent;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+
+                        @include tablet {
+                            margin-top: 24px;
+                            font-size: 3rem;
+                        }
+
+                        @include pc {
+                            font-size: 3.6rem;
+                        }
+                    }
+                }
             }
         }
     }

@@ -94,7 +94,6 @@ $spritesheet: (128px, 99px, '../img/sprite.png', $spritesheet-sprites, );
 @mixin sprite($sprite) {
   display: inline-block;
   vertical-align: top;
-  transform: scale(0.5);
   color: transparent;
   white-space: nowrap;
   overflow: hidden;

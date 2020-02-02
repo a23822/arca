@@ -72,6 +72,24 @@ btn_sign_out.addEventListener('click', function(){
     thumb_btn.setAttribute('aria-pressed', 'false');
 });
 
+//sign_layer
+let sign_layer = document.getElementsByClassName('sign_layer')[0];
+let sign_method_tab = sign_layer.getElementsByClassName('method');
+
+
+//  사인 메서드
+for (var i=0; i<sign_method_tab.length; i++) {
+    sign_method_tab[i].addEventListener('click', function(e){
+        for (var j=0; j<sign_method_tab.length; j++) {
+            if (i != j && sign_method_tab[j].getAttribute('aria-selected') == 'true') {
+                sign_method_tab[j].setAttribute('aria-selected','false');
+                break;
+            }
+        }
+
+        this.setAttribute('aria-selected', 'true');
+    });
+};
 
 // 팝 버튼 관련
 // function menu_btn_pop_up() {

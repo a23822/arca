@@ -27,15 +27,27 @@
     @media (max-width: 319px) {
         @content;
     }
+
+    @media (max-height: 319px) {
+        @content;
+    }
 }
 
 @mixin tablet {
     @media (min-width: 768px) {
         @content;
     }
+    
+    @media (min-height: 768px) {
+        @content;
+    }
 }
 
 @mixin pc {
+    @media (min-width: 1024px) {
+        @content;
+    }
+
     @media (min-width: 1024px) {
         @content;
     }
